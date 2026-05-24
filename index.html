@@ -1,0 +1,1775 @@
+<!DOCTYPE html>
+<html lang="vi" class="lang-vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Ant Adventures — Year 1 Plan 2026</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --green:#2E7D52;--green-dark:#1a5c3a;--green-light:#E8F5EF;--green-mid:#5aab7a;
+  --coral:#E8472A;--coral-light:#FAECE7;--coral-dark:#b83318;
+  --gray-100:#f8f8f6;--gray-200:#f0eeea;--gray-300:#e2e0db;--gray-400:#b4b2a9;
+  --gray-600:#5f5e5a;--gray-800:#2c2c2a;
+  --text:#2c2c2a;--text-muted:#5f5e5a;--text-light:#888780;
+  --border:#e2e0db;--radius:10px;--radius-sm:6px;
+  --sidebar-w:260px;
+}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--text);background:var(--gray-100);font-size:15px;line-height:1.6}
+a{color:var(--green);text-decoration:none}
+
+/* BILINGUAL */
+html.lang-en .vi{display:none!important}
+html.lang-vi .en{display:none!important}
+
+/* SIDEBAR */
+.sidebar{position:fixed;top:0;left:0;height:100vh;width:var(--sidebar-w);background:#fff;border-right:1px solid var(--border);display:flex;flex-direction:column;z-index:200;transition:transform .28s ease;overflow:hidden}
+.sidebar-head{padding:1.1rem 1.25rem;border-bottom:1px solid var(--border);flex-shrink:0}
+.sidebar-logo{display:flex;align-items:center;gap:8px;font-weight:700;font-size:.95rem;color:var(--green);margin-bottom:.75rem}
+.lang-toggle{display:flex;align-items:center;gap:0;border:1.5px solid var(--green);border-radius:20px;overflow:hidden;width:fit-content}
+.lang-btn{padding:4px 14px;font-size:12px;font-weight:700;cursor:pointer;transition:all .2s;background:transparent;border:none;color:var(--green)}
+.lang-btn.active{background:var(--green);color:#fff}
+.sidebar-nav{flex:1;overflow-y:auto;padding:.75rem 0}
+.sidebar-nav::-webkit-scrollbar{width:3px}
+.sidebar-nav::-webkit-scrollbar-thumb{background:var(--green-light)}
+.sidebar-nav a{display:block;padding:.6rem 1.25rem;font-size:13px;color:var(--text-muted);text-decoration:none;border-left:3px solid transparent;transition:all .18s;line-height:1.4}
+.sidebar-nav a:hover{color:var(--green);background:var(--green-light);border-left-color:var(--green-light)}
+.sidebar-nav a.active{color:var(--green);background:var(--green-light);border-left-color:var(--green);font-weight:600}
+.sidebar-footer{padding:.85rem 1.25rem;border-top:1px solid var(--border);font-size:11px;color:var(--text-light);flex-shrink:0}
+
+/* OVERLAY */
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:199}
+.overlay.show{display:block}
+
+/* MOBILE TOP BAR */
+.topbar{display:none;position:fixed;top:0;left:0;right:0;height:52px;background:#fff;border-bottom:1px solid var(--border);align-items:center;justify-content:space-between;padding:0 1rem;z-index:150;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+.hamburger{background:none;border:none;cursor:pointer;padding:6px;color:var(--text)}
+.topbar-logo{font-size:.9rem;font-weight:700;color:var(--green)}
+.topbar-lang{display:flex;border:1.5px solid var(--green);border-radius:20px;overflow:hidden}
+.topbar-lang button{padding:3px 10px;font-size:11px;font-weight:700;cursor:pointer;background:transparent;border:none;color:var(--green)}
+.topbar-lang button.active{background:var(--green);color:#fff}
+
+/* MAIN CONTENT */
+.main{margin-left:var(--sidebar-w);min-height:100vh}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--green-dark) 0%,var(--green) 60%,var(--green-mid) 100%);color:#fff;padding:4rem 2rem 3rem;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:-40px;right:-60px;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,.05)}
+.hero-ant{font-size:2.5rem;margin-bottom:.5rem;position:relative;z-index:1}
+.hero h1{font-size:2.4rem;font-weight:700;letter-spacing:-1px;margin-bottom:.4rem;position:relative;z-index:1}
+.hero-phase{font-size:1rem;opacity:.85;margin-bottom:1.8rem;position:relative;z-index:1}
+.hero-meta{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;position:relative;z-index:1}
+.pill{padding:5px 16px;border-radius:20px;font-size:12px;font-weight:600;letter-spacing:.3px}
+.pill-white{background:rgba(255,255,255,.18);color:#fff;border:1px solid rgba(255,255,255,.3)}
+.pill-coral{background:var(--coral);color:#fff}
+
+/* LAYOUT */
+.content{max-width:900px;margin:0 auto;padding:2.5rem 1.5rem}
+.section{margin-bottom:3.5rem;scroll-margin-top:70px}
+
+/* SECTION HEADER */
+.sec-head{display:flex;align-items:center;gap:12px;margin-bottom:1.75rem;padding-bottom:.85rem;border-bottom:2px solid var(--green)}
+.sec-num{background:var(--green);color:#fff;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0}
+.sec-title{font-size:1.1rem;font-weight:700;color:var(--green)}
+
+/* CARDS */
+.card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;margin-bottom:1rem}
+.card-sm{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:1.1rem 1.25rem}
+
+/* METRIC GRID */
+.metric-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-bottom:1.25rem}
+.metric{background:var(--green-light);border-radius:var(--radius);padding:1.1rem 1.25rem}
+.metric-label{font-size:11px;font-weight:600;color:var(--green);text-transform:uppercase;letter-spacing:.5px;margin-bottom:.3rem}
+.metric-value{font-size:1.5rem;font-weight:700;color:var(--green);line-height:1.2}
+.metric-sub{font-size:12px;color:var(--green);margin-top:.3rem;opacity:.8}
+.metric.coral{background:var(--coral-light)}.metric.coral .metric-label,.metric.coral .metric-value,.metric.coral .metric-sub{color:var(--coral)}
+.metric.dark{background:var(--green);color:#fff}.metric.dark .metric-label,.metric.dark .metric-value,.metric.dark .metric-sub{color:#fff}.metric.dark .metric-label{opacity:.75}.metric.dark .metric-sub{opacity:.8}
+
+/* TABLES */
+.tbl-wrap{overflow-x:auto;border-radius:var(--radius);border:1px solid var(--border);margin-bottom:1rem}
+table{width:100%;border-collapse:collapse;font-size:13.5px;background:#fff}
+thead th{background:var(--green);color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:12.5px;letter-spacing:.2px}
+tbody td{padding:10px 14px;border-bottom:1px solid var(--gray-200);vertical-align:top}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:nth-child(even) td{background:var(--gray-100)}
+tbody tr:hover td{background:var(--green-light)}
+.td-highlight{font-weight:600;color:var(--green)}
+.td-coral{font-weight:600;color:var(--coral)}
+.td-pos{color:#1a7a4a;font-weight:600}
+.td-neg{color:var(--coral);font-weight:600}
+
+/* DNA GRID */
+.dna-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:1.25rem}
+.dna-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem;border-top:3px solid var(--green)}
+.dna-icon{font-size:1.8rem;margin-bottom:.5rem}
+.dna-title{font-weight:700;font-size:1rem;margin-bottom:.4rem;color:var(--green)}
+.dna-desc{font-size:13px;color:var(--text-muted);line-height:1.6}
+
+/* TEAM */
+.team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px}
+.team-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem;text-align:center}
+.avatar{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;margin:0 auto .85rem}
+.av-g{background:var(--green-light);color:var(--green)}
+.av-c{background:var(--coral-light);color:var(--coral)}
+.av-gray{background:var(--gray-200);color:var(--text-muted)}
+.team-name{font-size:.95rem;font-weight:700;margin-bottom:.3rem}
+.team-role{font-size:12px;color:var(--text-muted);margin-bottom:.5rem;line-height:1.5}
+.team-loc{font-size:11px;color:var(--text-light);margin-bottom:.5rem}
+.team-salary{font-size:13px;font-weight:700;color:var(--green)}
+.team-salary.coral{color:var(--coral)}
+
+/* REGIONS */
+.regions{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:1rem}
+.region-card{background:var(--gray-200);border-radius:var(--radius);padding:1rem}
+.region-title{font-size:11px;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:.8px;margin-bottom:.5rem}
+.region-items{font-size:12.5px;color:var(--text-muted);line-height:1.9}
+
+/* TIMELINE */
+.timeline{position:relative;padding-left:2.25rem}
+.timeline::before{content:"";position:absolute;left:.65rem;top:8px;bottom:8px;width:2px;background:var(--border)}
+.tl-item{position:relative;margin-bottom:2rem}
+.tl-dot{position:absolute;left:-1.7rem;width:14px;height:14px;border-radius:50%;top:3px;border:2.5px solid #fff;box-shadow:0 0 0 2px var(--border)}
+.tl-dot.g{background:var(--green);box-shadow:0 0 0 2px var(--green)}
+.tl-dot.b{background:#6366f1;box-shadow:0 0 0 2px #6366f1}
+.tl-dot.c{background:var(--coral);box-shadow:0 0 0 2px var(--coral)}
+.tl-top{display:flex;align-items:center;gap:8px;margin-bottom:.3rem;flex-wrap:wrap}
+.tl-year{font-size:13px;font-weight:700;color:var(--text)}
+.tl-revenue{font-size:1.05rem;font-weight:700;color:var(--green)}
+.tl-revenue.phase2{color:#6366f1}
+.tl-revenue.phase3{color:var(--coral)}
+.tl-desc{font-size:13px;color:var(--text-muted);line-height:1.6}
+.phase-tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:11px;font-weight:700;letter-spacing:.2px}
+.p1{background:var(--green-light);color:var(--green)}
+.p2{background:#EEF2FF;color:#4F46E5}
+.p3{background:var(--coral-light);color:var(--coral)}
+
+/* FOUNDER */
+.founder-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.founder-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem}
+.founder-card.phuc{border-top:4px solid var(--green)}
+.founder-card.tai{border-top:4px solid var(--coral)}
+.founder-head{display:flex;align-items:center;gap:12px;margin-bottom:1rem}
+.founder-av{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700}
+.founder-name{font-weight:700;font-size:1rem}
+.founder-title{font-size:12px;color:var(--text-muted)}
+.founder-points{list-style:none;padding:0}
+.founder-points li{font-size:13px;color:var(--text-muted);padding:.35rem 0;border-bottom:1px solid var(--gray-200);padding-left:1.2rem;position:relative;line-height:1.5}
+.founder-points li::before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:700;font-size:11px;top:.45rem}
+.founder-points li:last-child{border-bottom:none}
+.founder-quote{background:var(--green-light);border-radius:var(--radius-sm);padding:1rem 1.25rem;margin-top:1rem;font-size:13px;color:var(--green-dark);font-style:italic;line-height:1.6;border-left:3px solid var(--green)}
+
+/* PENDING */
+.pending-item{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem 1.5rem;margin-bottom:1rem;border-left:4px solid var(--coral)}
+.pending-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:.6rem;flex-wrap:wrap;gap:.5rem}
+.pending-title{font-weight:700;font-size:.95rem}
+.status-pill{padding:4px 12px;border-radius:12px;font-size:11px;font-weight:700;background:var(--coral-light);color:var(--coral)}
+.status-pill.done{background:var(--green-light);color:var(--green)}
+.pending-desc{font-size:13.5px;color:var(--text-muted);line-height:1.65;margin-bottom:.6rem}
+.owner-line{font-size:12px;color:var(--text-light)}
+.owner-line strong{color:var(--green)}
+
+/* INFO ROWS */
+.info-rows{border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;background:#fff;margin-bottom:1rem}
+.info-row{display:flex;justify-content:space-between;align-items:flex-start;padding:.75rem 1.1rem;border-bottom:1px solid var(--gray-200);font-size:13.5px;gap:1rem}
+.info-row:last-child{border-bottom:none}
+.info-row:nth-child(even){background:var(--gray-100)}
+.ir-label{color:var(--text-muted);flex-shrink:0;min-width:150px}
+.ir-val{font-weight:600;text-align:right}
+
+/* TWO COL */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:1rem}
+
+/* BADGES */
+.badge{display:inline-block;padding:3px 12px;border-radius:12px;font-size:12px;font-weight:600;margin:3px 3px 3px 0}
+.badge-green{background:var(--green-light);color:var(--green)}
+.badge-coral{background:var(--coral-light);color:var(--coral)}
+.badge-purple{background:#EEF2FF;color:#4F46E5}
+.badge-gray{background:var(--gray-200);color:var(--text-muted)}
+
+/* INVESTOR HERO */
+.investor-hero{background:var(--green);color:#fff;border-radius:var(--radius);padding:2rem;text-align:center;margin-bottom:1.25rem}
+.inv-amount{font-size:2.5rem;font-weight:700;margin:.25rem 0}
+.inv-sub{opacity:.82;font-size:.95rem}
+.inv-detail{display:flex;justify-content:center;gap:2.5rem;margin-top:1.25rem;flex-wrap:wrap}
+.inv-item{text-align:center}
+.inv-item-num{font-size:1.4rem;font-weight:700}
+.inv-item-label{font-size:12px;opacity:.75;margin-top:.1rem}
+
+/* HIGHLIGHT */
+.highlight{background:var(--green-light);border-radius:var(--radius);padding:1.25rem 1.5rem;margin-bottom:1rem;border-left:4px solid var(--green)}
+.highlight.coral{background:var(--coral-light);border-left-color:var(--coral)}
+.highlight.purple{background:#EEF2FF;border-left-color:#6366f1}
+.highlight p,.highlight div{font-size:13.5px;color:var(--green-dark);line-height:1.65}
+.highlight.coral p,.highlight.coral div{color:var(--coral-dark)}
+.highlight.purple p{color:#4338CA}
+.highlight strong{font-weight:700}
+
+/* TIER LABELS */
+.tier-label{display:inline-block;padding:4px 14px;border-radius:12px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;margin-bottom:1rem}
+.tier-1{background:var(--green);color:#fff}
+.tier-2{background:#6366f1;color:#fff}
+.tier-3{background:var(--coral);color:#fff}
+.tier-4{background:var(--gray-300);color:var(--gray-800)}
+.inv-pipeline-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem 1.5rem;margin-bottom:.75rem;border-left:4px solid var(--green)}
+.inv-pipeline-card.t2{border-left-color:#6366f1}
+.inv-pipeline-card.t3{border-left-color:var(--coral)}
+.ipc-head{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:.5rem;flex-wrap:wrap}
+.ipc-left{flex:1}
+.ipc-name{font-weight:700;font-size:.93rem}
+.ipc-org{font-size:12px;color:var(--text-muted);margin-top:.1rem}
+.ipc-check{font-size:13px;font-weight:700;color:var(--green);white-space:nowrap}
+.ipc-check.t2{color:#6366f1}
+.ipc-body{font-size:13px;color:var(--text-muted);line-height:1.6;margin-bottom:.5rem}
+.ipc-approach{font-size:12.5px;background:var(--green-light);border-radius:6px;padding:.45rem .85rem;color:var(--green-dark);margin-bottom:.35rem}
+.ipc-timing{font-size:11.5px;color:var(--text-light)}
+.fit-badge{display:inline-block;padding:2px 10px;border-radius:12px;font-size:11px;font-weight:700}
+.fit-high{background:var(--green-light);color:var(--green)}
+.fit-med{background:#EEF2FF;color:#4F46E5}
+
+/* COMPETITOR */
+.comp-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem 1.5rem;margin-bottom:.85rem}
+.comp-head{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:.75rem;flex-wrap:wrap}
+.comp-name{font-weight:700;font-size:.95rem}
+.comp-sub{font-size:12px;color:var(--text-muted);margin-top:.2rem}
+.comp-rating{font-size:13px;font-weight:700;color:var(--coral);white-space:nowrap}
+.comp-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:.5rem}
+.comp-col-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--text-light);margin-bottom:.2rem}
+.comp-col-body{font-size:13px;color:var(--text-muted);line-height:1.55}
+.comp-advantage{background:var(--green-light);border-radius:6px;padding:.5rem .85rem;font-size:13px;color:var(--green-dark);margin-top:.5rem}
+
+/* WHITE SPACE */
+.ws-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:1.25rem}
+.ws-box{background:var(--green);color:#fff;border-radius:var(--radius);padding:1.25rem}
+.ws-num{font-size:2rem;font-weight:700;margin-bottom:.25rem}
+.ws-title{font-size:.88rem;font-weight:700;margin-bottom:.35rem;opacity:.9}
+.ws-desc{font-size:12px;opacity:.8;line-height:1.55}
+
+/* FOOTER */
+footer{background:var(--green-dark);color:#fff;padding:2.5rem 2rem;text-align:center}
+.ft-logo{font-size:1.2rem;font-weight:700;margin-bottom:.4rem}
+.ft-tagline{font-size:13px;opacity:.75;margin-bottom:.3rem}
+.ft-meta{font-size:12px;opacity:.5}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .sidebar{transform:translateX(calc(-1 * var(--sidebar-w)))}
+  .sidebar.open{transform:translateX(0)}
+  .topbar{display:flex}
+  .main{margin-left:0;padding-top:52px}
+  .hero{padding:2.5rem 1.25rem 2rem}
+  .hero h1{font-size:1.9rem}
+  .dna-grid,.regions,.founder-grid,.two-col{grid-template-columns:1fr}
+  .ws-grid,.comp-row{grid-template-columns:1fr}
+  .content{padding:1.5rem 1rem}
+  .section{scroll-margin-top:62px}
+}
+@media(min-width:769px){
+  .topbar{display:none!important}
+}
+@media print{.sidebar,.topbar,.overlay{display:none}.main{margin-left:0}.section{break-inside:avoid}}
+
+/* ============================================================
+   S19 — WEBSITE LAUNCH PLAN COMPONENT STYLES
+   ============================================================ */
+
+/* Gold colour token for S19 */
+:root { --gold:#C9973A; --gold-light:#fdf6e8; }
+
+/* Callout boxes */
+.callout{background:var(--green-light);border-left:4px solid var(--green);padding:18px 24px;border-radius:0 8px 8px 0;margin-bottom:28px;font-size:14px;color:#2a5c3f;line-height:1.6}
+.callout strong{font-weight:700}
+.callout.coral{background:var(--coral-light);border-color:var(--coral);color:#8b2a18}
+.callout.gold{background:var(--gold-light);border-color:var(--gold);color:#7a5a1e}
+
+/* Phase timeline */
+.timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:36px}
+@media(max-width:768px){.timeline{grid-template-columns:1fr}}
+.phase-card{background:#fff;border:1px solid var(--border);border-radius:10px;padding:20px;position:relative;overflow:hidden}
+.phase-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px}
+.phase-card.p1::before{background:var(--gold)}
+.phase-card.p2::before{background:var(--coral)}
+.phase-card.p3::before{background:var(--green)}
+.phase-card .phase-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#888;margin-bottom:6px}
+.phase-card .phase-title{font-size:15px;font-weight:700;color:var(--text);margin-bottom:4px}
+.phase-card .phase-dates{font-size:12px;color:#888;margin-bottom:14px}
+.phase-card ul{list-style:none;padding:0}
+.phase-card ul li{font-size:13px;color:var(--text-muted);padding:4px 0 4px 14px;position:relative;line-height:1.4}
+.phase-card ul li::before{content:'→';position:absolute;left:0;color:var(--green);font-size:11px}
+
+/* Workstream cards */
+.workstreams{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:32px}
+@media(max-width:768px){.workstreams{grid-template-columns:1fr}}
+.ws-card{background:#fff;border:1px solid var(--border);border-radius:10px;overflow:hidden}
+.ws-card .ws-header{background:var(--green);color:#fff;padding:14px 20px}
+.ws-card .ws-header .ws-icon{font-size:18px;margin-bottom:4px}
+.ws-card .ws-header .ws-title{font-size:14px;font-weight:700;letter-spacing:.3px}
+.ws-card .ws-header .ws-sub{font-size:11px;opacity:.8;margin-top:2px}
+.ws-card .ws-body{padding:18px 20px}
+.ws-card .ws-body .task-item{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--gray-200);font-size:13px;align-items:flex-start}
+.ws-card .ws-body .task-item:last-child{border-bottom:none}
+.ws-card .ws-body .task-item .check{width:18px;height:18px;border:2px solid var(--border);border-radius:4px;flex-shrink:0;margin-top:1px}
+.ws-card .ws-body .task-item .task-text{color:var(--text-muted);line-height:1.4}
+.ws-card .ws-body .task-item .task-text .due{display:inline-block;background:var(--green-light);color:var(--green);font-size:10px;padding:1px 7px;border-radius:10px;margin-left:6px;font-weight:600;vertical-align:middle}
+.ws-card .ws-body .task-item .task-text .due.urgent{background:var(--coral-light);color:var(--coral)}
+
+/* Journeys grid */
+.journeys-grid{background:#fff;border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:28px;overflow-x:auto}
+.journeys-grid table{width:100%;border-collapse:collapse;min-width:600px}
+.journeys-grid th{background:var(--green);color:#fff;padding:12px 16px;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;text-align:left}
+.journeys-grid td{padding:13px 16px;border-bottom:1px solid var(--gray-200);font-size:13px;color:var(--text-muted);vertical-align:top}
+.journeys-grid tr:last-child td{border-bottom:none}
+.journeys-grid tr:hover td{background:var(--green-light)}
+.journey-name{font-weight:700;color:var(--text);display:block;margin-bottom:2px}
+.journey-sub{font-size:11px;color:#888}
+.region-tag{display:inline-block;padding:3px 9px;border-radius:10px;font-size:11px;font-weight:600}
+.region-tag.north{background:#e8f0ff;color:#2952a3}
+.region-tag.central{background:var(--coral-light);color:var(--coral)}
+.region-tag.south{background:var(--green-light);color:var(--green)}
+.region-tag.multi{background:var(--gold-light);color:var(--gold)}
+.status-dot{display:inline-flex;align-items:center;gap:5px;font-size:11px}
+.status-dot::before{content:'';width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.status-dot.todo::before{background:#ccc}
+.status-dot.ready::before{background:var(--green)}
+.status-dot.post-trip::before{background:var(--coral)}
+
+/* Newsletter grid */
+.newsletter-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:28px}
+@media(max-width:768px){.newsletter-grid{grid-template-columns:1fr}}
+.nl-card{background:#fff;border:1px solid var(--border);border-radius:10px;overflow:hidden}
+.nl-card .nl-header{padding:16px 20px}
+.nl-card.b2b .nl-header{background:#1a2e4a;color:#fff}
+.nl-card.consumer .nl-header{background:var(--green);color:#fff}
+.nl-card .nl-header .nl-title{font-size:15px;font-weight:700;margin-bottom:2px}
+.nl-card .nl-header .nl-audience{font-size:12px;opacity:.8}
+.nl-card .nl-body{padding:16px 20px}
+.nl-row{display:flex;gap:10px;padding:7px 0;border-bottom:1px solid var(--gray-200);font-size:13px}
+.nl-row:last-child{border-bottom:none}
+.nl-row .nl-label{color:#888;min-width:90px;font-size:11px;text-transform:uppercase;letter-spacing:.5px;padding-top:1px;flex-shrink:0}
+.nl-row .nl-value{color:var(--text);font-weight:500;line-height:1.4}
+
+/* Shot list */
+.shot-list{background:#fff;border:1px solid var(--border);border-radius:10px;overflow-x:auto;margin-bottom:28px}
+.shot-list table{width:100%;border-collapse:collapse;min-width:580px}
+.shot-list th{background:#1a2e4a;color:#fff;padding:11px 16px;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;text-align:left}
+.shot-list td{padding:11px 16px;border-bottom:1px solid var(--gray-200);font-size:12.5px;color:var(--text-muted);vertical-align:top}
+.shot-list tr:last-child td{border-bottom:none}
+.shot-list .dest{font-weight:700;color:var(--text)}
+.shot-list .shots{line-height:1.9}
+.shot-tag{display:inline-block;font-size:10px;padding:1px 6px;border-radius:8px;margin-right:3px;font-weight:600;background:var(--green-light);color:var(--green)}
+.shot-tag.hero{background:#e8f0ff;color:#2952a3}
+.shot-tag.exp{background:var(--coral-light);color:var(--coral)}
+.shot-tag.food{background:var(--gold-light);color:var(--gold)}
+
+/* Supplier grid */
+.supplier-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:28px}
+@media(max-width:768px){.supplier-grid{grid-template-columns:1fr}}
+.sup-card{background:#fff;border:1px solid var(--border);border-radius:10px;padding:18px}
+.sup-card .sup-dest{font-size:13px;font-weight:700;color:var(--green);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+.sup-card .sup-item{display:flex;gap:8px;padding:5px 0;font-size:12px;color:var(--text-muted);line-height:1.4}
+.sup-card .sup-item .chk{width:14px;height:14px;border:1.5px solid var(--border);border-radius:3px;flex-shrink:0;margin-top:2px}
+
+/* Evaluation grid */
+.eval-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:28px}
+@media(max-width:768px){.eval-grid{grid-template-columns:1fr}}
+.eval-card{background:#fff;border:1px solid var(--border);border-radius:10px;padding:20px}
+.eval-card .eval-title{font-size:13px;font-weight:700;color:var(--text);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.eval-card .eval-q{font-size:13px;color:var(--text-muted);padding:7px 0;border-bottom:1px solid var(--gray-200);line-height:1.4;display:flex;gap:8px}
+.eval-card .eval-q:last-child{border-bottom:none}
+.eval-card .eval-q .q-num{color:var(--green);font-weight:700;flex-shrink:0;font-size:12px}
+
+/* Webflow specs */
+.webflow-specs{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:28px}
+@media(max-width:768px){.webflow-specs{grid-template-columns:repeat(2,1fr)}}
+.spec-card{background:#fff;border:1px solid var(--border);border-radius:8px;padding:16px;text-align:center}
+.spec-card .spec-icon{font-size:24px;margin-bottom:8px}
+.spec-card .spec-value{font-size:16px;font-weight:700;color:var(--green);margin-bottom:4px}
+.spec-card .spec-label{font-size:11px;color:#888;line-height:1.3}
+
+/* Founders commitment box */
+.commitment-box{background:var(--green);color:#fff;border-radius:12px;padding:28px 32px;margin-top:40px;margin-bottom:8px}
+.commitment-box h3{font-size:11px;letter-spacing:1px;text-transform:uppercase;opacity:.8;margin-bottom:16px}
+.commitment-box .commits{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:768px){.commitment-box .commits{grid-template-columns:1fr}}
+.commitment-box .commit-item{font-size:14px;line-height:1.5}
+.commitment-box .commit-item .who{font-weight:700;font-size:12px;letter-spacing:1px;text-transform:uppercase;opacity:.75;margin-bottom:6px}
+
+/* Sub-section header within S19 */
+.subsec-head{display:flex;align-items:center;gap:12px;margin:2.2rem 0 1.25rem;padding-bottom:.7rem;border-bottom:1.5px solid var(--green-light)}
+.subsec-num{background:var(--green-light);color:var(--green);width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0}
+.subsec-title{font-size:1rem;font-weight:600;color:var(--green)}
+
+</style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-head">
+    <div class="sidebar-logo">🐜 The Ant Adventures</div>
+    <div class="lang-toggle">
+      <button class="lang-btn active" id="btn-vi" onclick="setLang('vi')">VI</button>
+      <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+    </div>
+  </div>
+  <nav class="sidebar-nav" id="sidebar-nav">
+    <a href="#s1" class="nav-link"><span class="vi">1. Tổng quan</span><span class="en">1. Overview</span></a>
+    <a href="#s2" class="nav-link"><span class="vi">2. Mục tiêu</span><span class="en">2. Year 1 Goals</span></a>
+    <a href="#s3" class="nav-link"><span class="vi">3. Nhân sự</span><span class="en">3. Team</span></a>
+    <a href="#s4" class="nav-link"><span class="vi">4. Văn phòng</span><span class="en">4. Office</span></a>
+    <a href="#s5" class="nav-link"><span class="vi">5. B2B</span><span class="en">5. B2B Partners</span></a>
+    <a href="#s6" class="nav-link"><span class="vi">6. Sáng kiến</span><span class="en">6. Key Initiatives</span></a>
+    <a href="#s7" class="nav-link"><span class="vi">7. Nhà đầu tư</span><span class="en">7. Investor</span></a>
+    <a href="#s8" class="nav-link"><span class="vi">8. Lộ trình 10 năm</span><span class="en">8. 10-Year Roadmap</span></a>
+    <a href="#s9" class="nav-link"><span class="vi">9. Cam kết</span><span class="en">9. Commitments</span></a>
+    <a href="#s10" class="nav-link"><span class="vi">10. Hội chợ Mỹ</span><span class="en">10. US Travel Fair</span></a>
+    <a href="#s11" class="nav-link"><span class="vi">11. Thở Cà Phê</span><span class="en">11. Thở Cà Phê</span></a>
+    <a href="#s12" class="nav-link"><span class="vi">12. Pending</span><span class="en">12. Pending Actions</span></a>
+    <a href="#s13" class="nav-link"><span class="vi">13. Đối thủ</span><span class="en">13. Competitors</span></a>
+    <a href="#s14" class="nav-link"><span class="vi">14. Sản phẩm</span><span class="en">14. Products</span></a>
+    <a href="#s15" class="nav-link"><span class="vi">15. Tài chính</span><span class="en">15. Financials</span></a>
+    <a href="#s16" class="nav-link"><span class="vi">16. Cap Table</span><span class="en">16. Cap Table</span></a>
+    <a href="#s17" class="nav-link"><span class="vi">17. Rủi ro</span><span class="en">17. Risk Analysis</span></a>
+    <a href="#s18" class="nav-link"><span class="vi">18. Marketing</span><span class="en">18. Marketing & Sales</span></a>
+    <a href="#s19" class="nav-link"><span class="vi">19. Website & Kiểm Tra</span><span class="en">19. Website Launch Plan</span></a>
+  </nav>
+  <div class="sidebar-footer">
+    <div>Version 5 · 21/05/2026</div>
+    <div style="margin-top:2px">🔒 <span class="vi">Bảo mật — Phuc &amp; Tai</span><span class="en">Confidential — Phuc &amp; Tai</span></div>
+  </div>
+</aside>
+
+<!-- MOBILE OVERLAY -->
+<div class="overlay" id="overlay" onclick="closeSidebar()"></div>
+
+<!-- MOBILE TOP BAR -->
+<div class="topbar">
+  <button class="hamburger" onclick="toggleSidebar()" aria-label="Menu">
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect y="3" width="22" height="2.5" rx="1.25" fill="#2E7D52"/><rect y="9.75" width="22" height="2.5" rx="1.25" fill="#2E7D52"/><rect y="16.5" width="22" height="2.5" rx="1.25" fill="#2E7D52"/></svg>
+  </button>
+  <span class="topbar-logo">🐜 The Ant Adventures</span>
+  <div class="topbar-lang">
+    <button id="tbtn-vi" class="active" onclick="setLang('vi')">VI</button>
+    <button id="tbtn-en" onclick="setLang('en')">EN</button>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-ant">🐜</div>
+  <h1>The Ant Adventures</h1>
+  <div class="hero-phase">
+    <span class="vi">Kế Hoạch Năm 1 · 2026 &nbsp;·&nbsp; Giai đoạn 1 — Xây nền móng</span>
+    <span class="en">Year 1 Plan · 2026 &nbsp;·&nbsp; Phase 1 — Building the Foundation</span>
+  </div>
+  <div class="hero-meta">
+    <span class="pill pill-white">Phuc Vo &amp; Tai Pham</span>
+    <span class="pill pill-white">Version 5 · 21/05/2026</span>
+    <span class="pill pill-white">🔒 <span class="vi">Bảo mật</span><span class="en">Confidential</span></span>
+    <span class="pill pill-coral">Luxury Inbound Vietnam</span>
+  </div>
+</div>
+
+<div class="content">
+
+<!-- S1 -->
+<div class="section" id="s1">
+  <div class="sec-head">
+    <div class="sec-num">1</div>
+    <div class="sec-title"><span class="vi">Tổng quan công ty</span><span class="en">Company Overview</span></div>
+  </div>
+  <div class="metric-grid">
+    <div class="metric"><div class="metric-label"><span class="vi">Mức giá</span><span class="en">Price Point</span></div><div class="metric-value">$800–$1,500+</div><div class="metric-sub">USD / <span class="vi">người / ngày</span><span class="en">person / day</span></div></div>
+    <div class="metric"><div class="metric-label"><span class="vi">Thị trường nguồn</span><span class="en">Source Markets</span></div><div class="metric-value"><span class="vi">Quốc tế</span><span class="en">International</span></div><div class="metric-sub">USA · Canada · Europe · Australia</div></div>
+    <div class="metric"><div class="metric-label"><span class="vi">Phong cách</span><span class="en">Brand Style</span></div><div class="metric-value">Quiet Luxury</div><div class="metric-sub">Authentic · Bespoke · Local</div></div>
+    <div class="metric coral"><div class="metric-label"><span class="vi">Mục tiêu 10 năm</span><span class="en">10-Year Target</span></div><div class="metric-value">$10M</div><div class="metric-sub"><span class="vi">50 nhân sự · VN + Lào + Campuchia</span><span class="en">50 staff · VN + Laos + Cambodia</span></div></div>
+  </div>
+  <div class="info-rows" style="margin-bottom:1.25rem">
+    <div class="info-row"><span class="ir-label">Website</span><span class="ir-val"><a href="https://theantadventures.com">theantadventures.com</a></span></div>
+    <div class="info-row"><span class="ir-label"><span class="vi">Văn phòng</span><span class="en">Office</span></span><span class="ir-val">748 Truong Sa, District 3, HCMC</span></div>
+    <div class="info-row"><span class="ir-label"><span class="vi">Thị trường</span><span class="en">Market</span></span><span class="ir-val"><span class="vi">100% Inbound quốc tế — không domestic, không outbound</span><span class="en">100% International Inbound — no domestic, no outbound</span></span></div>
+  </div>
+  <h3 style="font-size:.95rem;font-weight:700;color:var(--green);margin-bottom:.85rem">Brand DNA — <span class="vi">3 Nguyên Tắc Không Thay Đổi</span><span class="en">3 Non-Negotiables</span></h3>
+  <div class="dna-grid">
+    <div class="dna-card"><div class="dna-icon">✦</div><div class="dna-title">Bespoke</div><div class="dna-desc vi">Không có hai hành trình nào giống nhau — mọi lịch trình đều được xây dựng riêng cho từng khách</div><div class="dna-desc en">No two journeys alike — every itinerary is built from scratch for each guest</div></div>
+    <div class="dna-card"><div class="dna-icon">🌿</div><div class="dna-title">Depth</div><div class="dna-desc vi">Địa phương, authentic, thực sự nằm ngoài bản đồ du lịch đại trà — mạng lưới vô hình</div><div class="dna-desc en">Local, authentic, genuinely off the tourist map — the invisible network</div></div>
+    <div class="dna-card"><div class="dna-icon">🔒</div><div class="dna-title">Discretion</div><div class="dna-desc vi">Riêng tư, tin tưởng và xuất sắc trong lặng lẽ — chuẩn mực UHNW luôn luôn</div><div class="dna-desc en">Privacy, trust and quiet excellence — UHNW standards always</div></div>
+  </div>
+  <h3 style="font-size:.95rem;font-weight:700;color:var(--green);margin-bottom:.85rem"><span class="vi">Khu vực sản phẩm (2026)</span><span class="en">Product Regions (2026)</span></h3>
+  <div class="regions">
+    <div class="region-card"><div class="region-title">🏔 <span class="vi">Miền Bắc</span><span class="en">North Vietnam</span></div><div class="region-items">Hanoi · Ha Long Bay · Ninh Binh · Sapa · Ha Giang · Mai Chau · Moc Chau</div></div>
+    <div class="region-card"><div class="region-title">🏖 <span class="vi">Miền Trung</span><span class="en">Central Vietnam</span></div><div class="region-items">Hue · Hoi An · Da Nang · Phong Nha · Quy Nhon · Da Lat · Nha Trang</div></div>
+    <div class="region-card"><div class="region-title">🌊 <span class="vi">Miền Nam</span><span class="en">South Vietnam</span></div><div class="region-items">Ho Chi Minh City · Mekong Delta · Cu Chi · Dong Nai · Phu Quoc · Con Dao</div></div>
+  </div>
+</div>
+
+<!-- S2 -->
+<div class="section" id="s2">
+  <div class="sec-head">
+    <div class="sec-num">2</div>
+    <div class="sec-title"><span class="vi">Mục tiêu 2026 — Proof of Concept</span><span class="en">2026 Goals — Proof of Concept</span></div>
+  </div>
+  <div class="highlight" style="margin-bottom:1.25rem">
+    <p class="vi">Năm 1 là năm xây nền móng và chứng minh mô hình. Mục tiêu không phải là doanh thu tối đa — mà là <strong>khách hàng chất lượng, sản phẩm chất lượng, biên lợi nhuận bền vững và quan hệ B2B vững chắc.</strong></p>
+    <p class="en">Year 1 is about building the foundation and proving the model. The goal is not maximum revenue — it is <strong>quality clients, quality product, sustainable margins and solid B2B relationships.</strong></p>
+  </div>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th><span class="vi">Mục tiêu</span><span class="en">Goal</span></th><th><span class="vi">Chi tiết</span><span class="en">Detail</span></th></tr></thead>
+      <tbody>
+        <tr><td><span class="vi">Doanh thu</span><span class="en">Revenue</span></td><td class="td-highlight">$30,000 – $50,000 USD</td></tr>
+        <tr><td><span class="vi">Đặt tour xác nhận</span><span class="en">Confirmed Bookings</span></td><td class="td-highlight"><span class="vi">Tối thiểu 10 inbound bookings</span><span class="en">Minimum 10 inbound bookings</span></td></tr>
+        <tr><td><span class="vi">Website live</span><span class="en">Website Launch</span></td><td><strong><span class="vi">Tháng 7 năm 2026</span><span class="en">July 2026</span></strong></td></tr>
+        <tr><td><span class="vi">Chuyến khảo sát</span><span class="en">Inspection Trip</span></td><td><span class="vi">Bắc + Trung Vietnam — Tháng 7/2026</span><span class="en">North + Central Vietnam — July 2026</span></td></tr>
+        <tr><td><span class="vi">Đầu tư (Nhà đầu tư)</span><span class="en">Investment (Investor)</span></td><td><span class="vi">2–3 tỷ VND — 50% cổ phần / 50% vay chuyển đổi 8%/năm</span><span class="en">2–3B VND — 50% equity / 50% convertible loan at 8%/yr</span></td></tr>
+        <tr><td><span class="vi">Nhân sự</span><span class="en">Team</span></td><td>5: Phuc · Tai · Hao · Tran · Ms. Ngoc</td></tr>
+        <tr><td><span class="vi">Đối tác B2B Việt Nam</span><span class="en">Vietnam B2B Partners</span></td><td><span class="vi">Tối thiểu 3: Make Your Asia · Charu · Adi</span><span class="en">Minimum 3: Make Your Asia · Charu · Adi</span></td></tr>
+        <tr><td><span class="vi">Đối tác B2B Quốc tế</span><span class="en">International B2B</span></td><td><span class="vi">Ít nhất 2 agents nước ngoài (mục tiêu 2027)</span><span class="en">At least 2 foreign agents (target 2027)</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- S3 -->
+<div class="section" id="s3">
+  <div class="sec-head">
+    <div class="sec-num">3</div>
+    <div class="sec-title"><span class="vi">Nhân sự — 5 người (2026)</span><span class="en">Team — 5 People (2026)</span></div>
+  </div>
+  <div class="highlight" style="margin-bottom:1.25rem">
+    <p class="vi">Nhóm Năm 1 được giữ tinh gọn có chủ ý. Mỗi vị trí đều quan trọng. Nhóm mở rộng vào năm 2027 với văn phòng Long Xuyên và 3 nhân viên mới.</p>
+    <p class="en">The Year 1 team is intentionally lean. Every role matters. The team expands in 2027 with the Long Xuyen office and 3 new hires.</p>
+  </div>
+  <div class="team-grid" style="margin-bottom:1.5rem">
+    <div class="team-card"><div class="avatar av-g">PV</div><div class="team-name">Phuc Vo</div><div class="team-role">Founder &amp; CEO</div><div class="team-loc">📍 Ho Chi Minh City</div><div class="team-salary">18,000,000 VND/<span class="vi">tháng</span><span class="en">mo</span></div></div>
+    <div class="team-card"><div class="avatar av-c">TP</div><div class="team-name">Tai Pham</div><div class="team-role">Co-Founder, Head of Sales</div><div class="team-loc">📍 Long Xuyen, An Giang</div><div class="team-salary">15,000,000 VND/<span class="vi">tháng</span><span class="en">mo</span></div></div>
+    <div class="team-card"><div class="avatar av-g">HD</div><div class="team-name">Hao Duong</div><div class="team-role">Operations Manager</div><div class="team-loc">📍 HCMC</div><div class="team-salary">9,000,000 VND/<span class="vi">tháng</span><span class="en">mo</span></div></div>
+    <div class="team-card"><div class="avatar av-g">TN</div><div class="team-name">Tran Nguyen</div><div class="team-role">Pricing &amp; Products</div><div class="team-loc">📍 Long Xuyen</div><div class="team-salary">8,000,000 VND/<span class="vi">tháng</span><span class="en">mo</span></div></div>
+    <div class="team-card"><div class="avatar av-gray">MN</div><div class="team-name">Ngoc Trinh</div><div class="team-role">Intl Sales – Australia</div><div class="team-loc">🌏 Australia (remote)</div><div class="team-salary coral"><span class="vi">Hoa hồng 5–8%</span><span class="en">5–8% commission</span></div></div>
+  </div>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th><span class="vi">Nhóm công việc</span><span class="en">Work Area</span></th><th>Phuc Vo — Founder &amp; CEO</th><th>Tai Pham — Head of Sales</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Brand &amp; Creative</strong></td><td class="vi">Giọng thương hiệu, storytelling, cultural direction</td><td class="vi">Brand systems, product positioning, pricing strategy</td></tr>
+        <tr><td><strong>Brand &amp; Creative</strong><span class="en" style="display:none"></span></td><td class="en">Brand voice, storytelling, cultural direction</td><td class="en">Brand systems, product positioning, pricing strategy</td></tr>
+        <tr><td><strong>Sales &amp; Revenue</strong></td><td><span class="vi">Closing high-touch clients, gặp khách tại Saigon</span><span class="en">Closing high-touch clients, meeting guests in Saigon</span></td><td><span class="vi">Lead qualify, báo giá 2h, CRM, pipeline</span><span class="en">Lead qualify, 2h quotes, CRM, full pipeline</span></td></tr>
+        <tr><td><strong>Operations</strong></td><td><span class="vi">On-ground, nhà cung cấp Saigon, chăm sóc 24/7</span><span class="en">On-ground, Saigon suppliers, 24/7 guest care</span></td><td><span class="vi">Booking logistics, supplier contracts, tour docs</span><span class="en">Booking logistics, supplier contracts, tour docs</span></td></tr>
+        <tr><td><strong>Technology</strong></td><td><span class="vi">— (người dùng hệ thống)</span><span class="en">— (system user)</span></td><td><span class="vi">Mitel AI CRM, website, automation, báo giá tự động</span><span class="en">Mitel AI CRM, website, automation, auto-quoting</span></td></tr>
+        <tr><td><strong>Social Media</strong></td><td><span class="vi">Facebook + Instagram, on-camera, Geek UP 1x/tháng</span><span class="en">Facebook + Instagram, on-camera, Geek UP 1x/month</span></td><td><span class="vi">Website content, blog, LinkedIn, SEO &amp; Ads</span><span class="en">Website content, blog, LinkedIn, SEO &amp; Ads</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- S4 -->
+<div class="section" id="s4">
+  <div class="sec-head">
+    <div class="sec-num">4</div>
+    <div class="sec-title"><span class="vi">Văn phòng — 2026 &amp; 2027</span><span class="en">Office — 2026 &amp; 2027</span></div>
+  </div>
+  <div class="highlight" style="margin-bottom:1.25rem">
+    <p class="vi">Công ty vận hành từ hai địa điểm home-based / co-working trong Năm 1. Văn phòng Long Xuyên chính thức dự kiến mở đầu 2027.</p>
+    <p class="en">The company operates from two home-based / co-working locations in Year 1. The official Long Xuyen office is planned to open in early 2027.</p>
+  </div>
+  <div class="tbl-wrap" style="margin-bottom:1.25rem">
+    <table>
+      <thead><tr><th><span class="vi">Địa điểm</span><span class="en">Location</span></th><th><span class="vi">Chi tiết</span><span class="en">Detail</span></th></tr></thead>
+      <tbody>
+        <tr><td><strong>Saigon (2026)</strong></td><td><span class="vi">Nhà thuê của Phuc — 9.5M VND/tháng. Công ty đóng góp ~4M/tháng. Phuc + Hao làm việc tại đây.</span><span class="en">Phuc's rented home — 9.5M VND/month. Company contributes ~4M/month. Phuc + Hao work here.</span></td></tr>
+        <tr><td><strong>Long Xuyen (2026)</strong></td><td><span class="vi">Không có VP chính thức. Tai + Tran làm việc tại nhà / quán cà phê / co-working.</span><span class="en">No formal office. Tai + Tran work from home / cafes / co-working.</span></td></tr>
+        <tr><td><strong>Long Xuyen (2027)</strong></td><td><span class="vi">Mở đầu 2027 — 5 người. Thuê mặt bằng 5–7 triệu/tháng.</span><span class="en">Opens early 2027 — 5 people. Rent 5–7M VND/month.</span></td></tr>
+        <tr><td><strong>Australia</strong></td><td><span class="vi">Ms. Ngoc làm việc từ xa hoàn toàn. Hưởng hoa hồng 5–8%.</span><span class="en">Ms. Ngoc works fully remote. Earns 5–8% commission.</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="two-col">
+    <div class="card-sm"><div style="font-weight:700;margin-bottom:.4rem;font-size:.9rem"><span class="vi">Tại sao Tai ở Long Xuyên?</span><span class="en">Why Tai stays in Long Xuyen?</span></div><div style="font-size:13px;color:var(--text-muted)"><span class="vi">Gia đình Tai ở đây — ổn định để tập trung dài hạn. Chi phí thấp hơn Saigon. Long Xuyên là cửa ngõ Mekong Delta.</span><span class="en">Tai's family is here — stability for long-term focus. Lower costs than Saigon. Long Xuyen is the gateway to the Mekong Delta.</span></div></div>
+    <div class="card-sm"><div style="font-weight:700;margin-bottom:.4rem;font-size:.9rem"><span class="vi">Tại sao Phuc ở Saigon?</span><span class="en">Why Phuc stays in Saigon?</span></div><div style="font-size:13px;color:var(--text-muted)"><span class="vi">Saigon là bộ mặt front office — nơi khách quốc tế đặt chân đầu tiên. Phuc gặp gỡ khách hàng, đối tác B2B, nhà cung cấp.</span><span class="en">Saigon is the front office — where international guests first arrive. Phuc meets clients, B2B partners and suppliers.</span></div></div>
+  </div>
+</div>
+
+<!-- S5 -->
+<div class="section" id="s5">
+  <div class="sec-head">
+    <div class="sec-num">5</div>
+    <div class="sec-title"><span class="vi">Đối tác B2B</span><span class="en">B2B Partners</span></div>
+  </div>
+  <h3 style="font-size:.9rem;font-weight:700;color:var(--text-muted);margin-bottom:.85rem;text-transform:uppercase;letter-spacing:.5px"><span class="vi">B2B Việt Nam — 2026</span><span class="en">Vietnam B2B — 2026</span></h3>
+  <div class="tbl-wrap" style="margin-bottom:1.5rem">
+    <table>
+      <thead><tr><th><span class="vi">Đối tác</span><span class="en">Partner</span></th><th><span class="vi">Loại</span><span class="en">Type</span></th><th><span class="vi">Nội dung hợp tác</span><span class="en">Collaboration</span></th></tr></thead>
+      <tbody>
+        <tr><td><strong>Make Your Asia Saigon</strong></td><td><span class="badge badge-green">B2B Operator</span></td><td><span class="vi">Tour độc đáo khu vực Saigon / Mekong — operator có sẵn khách, The Ant Adventures cung cấp sản phẩm</span><span class="en">Unique tours in Saigon / Mekong region — operator has clients, The Ant Adventures provides the product</span></td></tr>
+        <tr><td><strong>Charu (Ms. Charu)</strong></td><td><span class="badge badge-purple">Expat Community</span></td><td><span class="vi">Tour cho cộng đồng expat tại HCMC — First Railway, Mekong, cultural day trips</span><span class="en">Tours for expat community in HCMC — First Railway, Mekong, cultural day trips</span></td></tr>
+        <tr><td><strong>Adi (Long Xuyen)</strong></td><td><span class="badge badge-green">Local Partner</span></td><td><span class="vi">2D1N Tri Ton + 1 ngày Tri Ton — 2 sản phẩm đã thiết kế. Mekong Delta gateway.</span><span class="en">2D1N Tri Ton + 1-day Tri Ton — 2 products designed. Mekong Delta gateway.</span></td></tr>
+        <tr><td><strong><span class="vi">Trường Quốc Tế Saigon</span><span class="en">Saigon International Schools</span></strong></td><td><span class="badge badge-gray">B2B Education</span></td><td><span class="vi">Chương trình văn hoá cho học sinh, phụ huynh trường quốc tế. Xác định trường mục tiêu Q3/2026.</span><span class="en">Cultural programs for students and parents at international schools. Target schools identified Q3/2026.</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <h3 style="font-size:.9rem;font-weight:700;color:var(--text-muted);margin-bottom:.85rem;text-transform:uppercase;letter-spacing:.5px"><span class="vi">B2B Quốc tế — Mục tiêu 2027</span><span class="en">International B2B — Target 2027</span></h3>
+  <div class="highlight" style="margin-bottom:1rem">
+    <p class="vi">Nhóm này là đường dài — travel agents và luxury operators ở Mỹ, Úc, Châu Âu đưa khách UHNW đến Vietnam với booking value <strong>$15,000–$50,000+ / nhóm</strong>.</p>
+    <p class="en">This is the long game — US, Australian and European luxury operators bringing UHNW clients to Vietnam with booking values of <strong>$15,000–$50,000+ per group</strong>.</p>
+  </div>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th><span class="vi">Đối tác</span><span class="en">Partner</span></th><th><span class="vi">Thị trường</span><span class="en">Market</span></th><th><span class="vi">Mục tiêu</span><span class="en">Target</span></th></tr></thead>
+      <tbody>
+        <tr><td><strong>Ms. Ngoc</strong></td><td>🇦🇺 Australia</td><td><span class="vi">Intl Sales Agent — hoa hồng 5–8%. Đang tích cực convert khách Úc.</span><span class="en">Intl Sales Agent — 5–8% commission. Actively converting Australian prospects.</span></td></tr>
+        <tr><td><strong>Target Agent #1</strong></td><td>🇺🇸 USA — 2027</td><td><span class="vi">Luxury travel agent Mỹ — tiếp cận tại Virtuoso Travel Week Las Vegas (T8/2027).</span><span class="en">US luxury travel agent — outreach at Virtuoso Travel Week Las Vegas (Aug 2027).</span></td></tr>
+        <tr><td><strong>Target Agent #2</strong></td><td>🇦🇺🇪🇺 AU / EU — 2027</td><td><span class="vi">Boutique operator phân khúc UHNW family. Qua network của Ms. Ngoc hoặc ILTM Americas.</span><span class="en">Boutique UHNW family operator. Via Ms. Ngoc's network or ILTM Americas.</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- S6 -->
+<div class="section" id="s6">
+  <div class="sec-head">
+    <div class="sec-num">6</div>
+    <div class="sec-title"><span class="vi">Các sáng kiến trọng yếu — 2026</span><span class="en">Key Initiatives — 2026</span></div>
+  </div>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th><span class="vi">Sáng kiến</span><span class="en">Initiative</span></th><th><span class="vi">Thời gian</span><span class="en">Timeline</span></th><th><span class="vi">Chi tiết</span><span class="en">Detail</span></th></tr></thead>
+      <tbody>
+        <tr><td><strong><span class="vi">Ra mắt Website</span><span class="en">Website Launch</span></strong></td><td><span class="vi">Tháng 7/2026</span><span class="en">July 2026</span></td><td><span class="vi">Digital flagship — bắt buộc có trước hội chợ quốc tế.</span><span class="en">Digital flagship — mandatory before any international trade show.</span></td></tr>
+        <tr><td><strong><span class="vi">Chuyến khảo sát Bắc + Trung</span><span class="en">North + Central Inspection Trip</span></strong></td><td><span class="vi">Tháng 7/2026</span><span class="en">July 2026</span></td><td><span class="vi">Tai + Phuc đi thực địa, xây quan hệ nhà cung cấp, chụp ảnh, hoàn thiện 3 Signature Products.</span><span class="en">Tai + Phuc do fieldwork, build supplier relationships, shoot photos, finalise 3 Signature Products.</span></td></tr>
+        <tr><td><strong><span class="vi">Hoàn thiện Product Portfolio</span><span class="en">Complete Product Portfolio</span></strong></td><td><span class="vi">Tháng 10/2026</span><span class="en">Oct 2026</span></td><td><span class="vi">Tất cả sản phẩm sẵn sàng để bán — toàn bộ Bắc + Trung + Nam.</span><span class="en">All products ready to sell — full North + Central + South coverage.</span></td></tr>
+        <tr><td><strong>CRM — Mitel AI</strong></td><td>Phase 1: 2026–2027</td><td><span class="vi">Tai xây CRM all-in-one. Mục tiêu: thiết kế tour 10–15 ngày trong 30 phút. Phase 2 (2027): bán SaaS.</span><span class="en">Tai builds all-in-one CRM. Goal: design a 10–15 day tour in 30 minutes. Phase 2 (2027): SaaS revenue.</span></td></tr>
+        <tr><td><strong>Geek UP</strong></td><td><span class="vi">Hàng tháng</span><span class="en">Monthly</span></td><td><span class="vi">Phuc trình bày 1x/tháng — xây uy tín thương hiệu + bán tour từ cộng đồng.</span><span class="en">Phuc presents 1x/month — builds brand credibility + sells tours from the community.</span></td></tr>
+        <tr><td><strong><span class="vi">Chuẩn bị hồ sơ Nhà đầu tư</span><span class="en">Investor File</span></strong></td><td>Q3/2026</td><td><span class="vi">Mô hình tài chính + investor deck sẵn sàng. Q3/2026 là buổi họp chính thức đầu tiên.</span><span class="en">Financial model + investor deck ready. Q3/2026 is the first formal review meeting.</span></td></tr>
+        <tr><td><strong>Thở Cà Phê</strong></td><td><span class="vi">Khai trương 2/2027</span><span class="en">Opens Feb 2027</span></td><td><span class="vi">Tai chủ trì. Phuc + Ms. Ngoc đồng phát triển. Nhượng quyền vùng Mekong Delta.</span><span class="en">Tai leads. Phuc + Ms. Ngoc co-develop. Franchise model for Mekong Delta region.</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<!-- S7 -->
+<div class="section" id="s7">
+  <div class="sec-head"><div class="sec-num">7</div><div class="sec-title"><span class="vi">Nhà đầu tư</span><span class="en">Investor</span></div></div>
+  <div class="investor-hero">
+    <div style="font-size:12px;opacity:.75;text-transform:uppercase;letter-spacing:.5px"><span class="vi">Pre-money Valuation đề xuất</span><span class="en">Proposed Pre-Money Valuation</span></div>
+    <div class="inv-amount">15 <span class="vi">tỷ VND</span><span class="en">billion VND</span></div>
+    <div class="inv-sub">~$600,000 USD · Post-money: 17–18B VND</div>
+    <div class="inv-detail">
+      <div class="inv-item"><div class="inv-item-num">2–3B</div><div class="inv-item-label"><span class="vi">Số tiền đầu tư (VND)</span><span class="en">Investment (VND)</span></div></div>
+      <div class="inv-item"><div class="inv-item-num">12–15%</div><div class="inv-item-label"><span class="vi">Cổ phần Nhà đầu tư</span><span class="en">Investor Equity</span></div></div>
+      <div class="inv-item"><div class="inv-item-num">8%/yr</div><div class="inv-item-label"><span class="vi">Lãi suất vay chuyển đổi</span><span class="en">Convertible Loan Rate</span></div></div>
+      <div class="inv-item"><div class="inv-item-num">&gt;85%</div><div class="inv-item-label"><span class="vi">Quyền kiểm soát Founders</span><span class="en">Founders Control</span></div></div>
+    </div>
+  </div>
+  <h3 style="font-size:.95rem;font-weight:700;color:var(--green);margin-bottom:1rem"><span class="vi">Con người đứng sau The Ant Adventures</span><span class="en">The People Behind The Ant Adventures</span></h3>
+  <div class="founder-grid" style="margin-bottom:1.5rem">
+    <div class="founder-card phuc">
+      <div class="founder-head"><div class="founder-av av-g">PV</div><div><div class="founder-name">Phuc Vo</div><div class="founder-title">Founder &amp; CEO</div></div></div>
+      <ul class="founder-points">
+        <li><span class="vi"><strong>15 năm</strong> hướng dẫn viên inbound chuyên nghiệp — hiểu Vietnam từ trong ra ngoài</span><span class="en"><strong>15 years</strong> professional inbound guide — knows Vietnam inside out</span></li>
+        <li><span class="vi"><strong>Tư duy toàn cầu</strong> — đã đi hơn 20 quốc gia, thấu hiểu kỳ vọng khách luxury quốc tế</span><span class="en"><strong>Global mindset</strong> — visited 20+ countries, understands international luxury guest expectations</span></li>
+        <li><span class="vi"><strong>Đã xây đội ngũ 100 HDV</strong> tại TNK Travel — chứng minh khả năng lãnh đạo và scale</span><span class="en"><strong>Built a team of 100 guides</strong> at TNK Travel — proven leadership and scaling ability</span></li>
+        <li><span class="vi"><strong>Đã startup 2 lần</strong> — "Saigon Morning Ride" và "Satori Travel", 6,000+ Facebook members</span><span class="en"><strong>Founded 2 ventures</strong> — "Saigon Morning Ride" and "Satori Travel", 6,000+ Facebook members</span></li>
+        <li><span class="vi"><strong>Mạng lưới sâu rộng</strong> — nhà cung cấp, HDV, chuyên gia văn hoá địa phương</span><span class="en"><strong>Deep network</strong> — suppliers, guides, local cultural experts</span></li>
+      </ul>
+    </div>
+    <div class="founder-card tai">
+      <div class="founder-head"><div class="founder-av av-c">TP</div><div><div class="founder-name">Tai Pham</div><div class="founder-title">Co-Founder, Head of Sales</div></div></div>
+      <ul class="founder-points">
+        <li><span class="vi"><strong>10 năm HDV + Giám đốc Chi nhánh</strong> tại In Country Tours — cả hai góc nhìn: thực địa lẫn quản lý</span><span class="en"><strong>10 yrs guide + Branch Director</strong> at In Country Tours — both ground-level and management perspective</span></li>
+        <li><span class="vi"><strong>Xây team từ 3 lên 17 người</strong> — hệ thống tuyển dụng, đào tạo và giữ người thực chiến</span><span class="en"><strong>Grew team from 3 to 17</strong> — real-world recruiting, training and retention systems</span></li>
+        <li><span class="vi"><strong>Xây mô hình tự vận hành</strong> — tư duy hệ thống mà startup cần ở giai đoạn scale</span><span class="en"><strong>Built self-running model</strong> — systems thinking the business needs to scale</span></li>
+        <li><span class="vi"><strong>Chiến lược hệ thống dài hạn</strong> — framework pricing, CRM, SOPs từ đầu</span><span class="en"><strong>Long-term systems strategy</strong> — pricing framework, CRM, SOPs built from day one</span></li>
+        <li><span class="vi"><strong>Mitel AI CRM</strong> — xây nền tảng công nghệ cho The Ant Adventures, tiềm năng SaaS</span><span class="en"><strong>Mitel AI CRM</strong> — building the tech platform for The Ant Adventures, SaaS potential</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="founder-quote">
+    <span class="vi">"Chúng tôi không bán tour. Chúng tôi mang lại một trải nghiệm thực thụ mà khách hàng sẽ kể lại mãi."</span>
+    <span class="en">"We don't sell tours. We deliver a genuine experience guests will talk about for the rest of their lives."</span>
+    <div style="margin-top:.5rem;font-size:12px;opacity:.7;font-style:normal">— Phuc Vo &amp; Tai Pham</div>
+  </div>
+  <h3 style="font-size:.95rem;font-weight:700;color:var(--green);margin:1.5rem 0 1rem">Traction — <span class="vi">Doanh thu thực tế</span><span class="en">Actual Revenue</span> Feb → May 2026</h3>
+  <div class="metric-grid" style="margin-bottom:1.25rem">
+    <div class="metric dark"><div class="metric-label"><span class="vi">Tổng doanh thu</span><span class="en">Total Revenue</span></div><div class="metric-value">$6,213</div><div class="metric-sub">4 <span class="vi">tháng</span><span class="en">months</span></div></div>
+    <div class="metric"><div class="metric-label"><span class="vi">Lợi nhuận ròng</span><span class="en">Net Profit</span></div><div class="metric-value">$3,173</div><div class="metric-sub">Margin 51%</div></div>
+    <div class="metric"><div class="metric-label"><span class="vi">Tours hoàn thành</span><span class="en">Tours Completed</span></div><div class="metric-value">8</div><div class="metric-sub">Feb–May 2026</div></div>
+    <div class="metric coral"><div class="metric-label"><span class="vi">Chi phí/tháng hiện tại</span><span class="en">Current Monthly Cost</span></div><div class="metric-value">~$375</div><div class="metric-sub"><span class="vi">Trước đầu tư</span><span class="en">Pre-investment</span></div></div>
+  </div>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th><span class="vi">Tháng</span><span class="en">Month</span></th><th><span class="vi">Loại</span><span class="en">Type</span></th><th><span class="vi">Tour / Khách hàng</span><span class="en">Tour / Client</span></th><th><span class="vi">Doanh thu (VND)</span><span class="en">Revenue (VND)</span></th><th><span class="vi">Lợi nhuận</span><span class="en">Profit</span></th></tr></thead>
+      <tbody>
+        <tr><td>Feb</td><td><span class="badge badge-green">Sales</span></td><td>Andrew McFarland — Deposit (Dec 2026)</td><td>38,538,000</td><td class="td-pos">+38,538,000</td></tr>
+        <tr><td>Feb</td><td><span class="badge badge-green">Sales</span></td><td>ILV <span class="vi">Chuyến Tàu Tour</span><span class="en">Train Tour</span></td><td>10,450,000</td><td class="td-pos">+10,450,000</td></tr>
+        <tr><td>Mar</td><td><span class="badge badge-purple">Ops</span></td><td>Uma Lerner</td><td>3,588,000</td><td class="td-pos">+1,768,000</td></tr>
+        <tr><td>Mar</td><td><span class="badge badge-green">Sales</span></td><td><span class="vi">Chị My — In Hanoi (Full Tour)</span><span class="en">Ms. My — In Hanoi (Full Tour)</span></td><td>63,775,000</td><td class="td-pos">+24,840,000</td></tr>
+        <tr><td>Apr</td><td><span class="badge badge-coral">PR/Brand</span></td><td>30 April Tour — Tim Ông Thè (12 pax) ⚡ <span class="vi">Chiến lược PR</span><span class="en">Strategic PR</span></td><td>23,500,000</td><td class="td-neg">−13,255,500</td></tr>
+        <tr><td>May</td><td><span class="badge badge-green">Sales</span></td><td>Charu — First Railway In Indochina #1</td><td>17,460,000</td><td class="td-pos">+17,460,000</td></tr>
+        <tr><td>May</td><td><span class="badge badge-green">Sales</span></td><td>Charu — First Railway In Indochina #2</td><td>1,116,000</td><td class="td-pos">+1,116,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="highlight coral" style="margin-top:1rem">
+    <p class="vi"><strong>⚡ Về 30 April Tour (âm 13.2 triệu VND):</strong> Đây KHÔNG phải lỗi định giá — đây là <strong>bước đi chiến lược có chủ đích</strong>. Tour 30/4 là chiến dịch PR và brand activation: content shoot thực địa, ảnh chất lượng cao, testimonials thực tế. Chi phí âm là <strong>ngân sách marketing</strong> — không phải thua lỗ.</p>
+    <p class="en"><strong>⚡ On the 30 April Tour (−13.2M VND):</strong> This was NOT a pricing mistake — it was a <strong>deliberate strategic move</strong>. The April 30th tour was a PR and brand activation campaign: on-site content shoot, high-quality photography, real testimonials. The negative margin is a <strong>marketing investment</strong> — not a loss.</p>
+  </div>
+
+  <!-- THỰC TRẠNG VỐN HIỆN TẠI -->
+  <h3 style="font-size:.95rem;font-weight:700;color:var(--green);margin:1.75rem 0 .75rem">
+    <span class="vi">📌 Thực trạng vốn hiện tại — Trước đầu tư</span>
+    <span class="en">📌 Current Capital Status — Pre-Investment</span>
+  </h3>
+
+  <div class="tbl-wrap" style="margin-bottom:1rem">
+    <table>
+      <thead><tr><th><span class="vi">Chi phí hàng tháng đang chạy</span><span class="en">Current Monthly Costs (Live)</span></th><th style="text-align:right"><span class="vi">VND/tháng</span><span class="en">VND/month</span></th><th><span class="vi">Ghi chú</span><span class="en">Note</span></th></tr></thead>
+      <tbody>
+        <tr>
+          <td>🏠 <span class="vi">Công ty hỗ trợ nhà Phuc — Saigon home office</span><span class="en">Company contribution to Phuc's Saigon home office</span></td>
+          <td style="text-align:right">4,000,000</td>
+          <td style="font-size:.8rem;color:var(--text-muted)"><span class="vi">Phuc thuê 9.5M · công ty đóng 4M</span><span class="en">Phuc rents at 9.5M · company covers 4M</span></td>
+        </tr>
+        <tr>
+          <td>🏦 <span class="vi">Lãi vay Viettin Bank</span><span class="en">Viettin Bank loan interest</span></td>
+          <td style="text-align:right">8,000,000</td>
+          <td style="font-size:.8rem;color:var(--text-muted)"><span class="vi">Tai + Phuc vay 600M · ~16%/năm</span><span class="en">Tai + Phuc borrowed 600M · ~16%/yr</span></td>
+        </tr>
+        <tr>
+          <td>⚙️ <span class="vi">Vận hành chung (software, ops)</span><span class="en">General operations (software, ops)</span></td>
+          <td style="text-align:right">9,500,000</td>
+          <td style="font-size:.8rem;color:var(--text-muted)">~$375 USD/month</td>
+        </tr>
+        <tr style="border-left:3px solid var(--coral);background:#fffbf0">
+          <td>💼 <span class="vi">Thu nhập Phuc + Tai (hiện tại)</span><span class="en">Phuc + Tai income (current)</span></td>
+          <td style="text-align:right;font-style:italic;color:var(--coral);font-weight:600"><span class="vi">Biến đổi</span><span class="en">Variable</span></td>
+          <td style="font-size:.8rem;color:var(--text-muted)">
+            <span class="vi">2% gross/tour mỗi người — không lương cố định<br>
+            Ví dụ: tour $15K → ~$300/người (~7.5M) · tour $20K → ~$400/người (~10M) · tour $40K → ~$800/người (~20M)</span>
+            <span class="en">2% gross/tour each — no fixed salary<br>
+            E.g. $15K tour → ~$300/person (~7.5M VND) · $20K tour → ~$400/person (~10M) · $40K tour → ~$800/person (~20M)</span>
+          </td>
+        </tr>
+        <tr style="background:var(--green-light)">
+          <td><strong><span class="vi">TỔNG CHI CỐ ĐỊNH HIỆN TẠI</span><span class="en">TOTAL FIXED BURN (Current)</span></strong></td>
+          <td style="text-align:right"><strong class="td-highlight">21,500,000</strong></td>
+          <td style="font-size:.8rem;color:var(--text-muted)"><span class="vi">~$860 USD/tháng · chưa tính commission Phuc + Tai</span><span class="en">~$860 USD/month · excl. founders' variable commission</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tbl-wrap" style="margin-bottom:1.25rem">
+    <table>
+      <thead><tr><th><span class="vi">Tình trạng vốn</span><span class="en">Capital Status</span></th><th style="text-align:right">VND</th></tr></thead>
+      <tbody>
+        <tr><td><span class="vi">Tổng vốn Tai + Phuc đã vay (Viettin Bank)</span><span class="en">Total founders' loan (Viettin Bank)</span></td><td style="text-align:right">600,000,000</td></tr>
+        <tr><td><span class="vi">Vốn còn lại hiện tại (tháng 5/2026)</span><span class="en">Remaining capital (May 2026)</span></td><td style="text-align:right"><strong>~200,000,000</strong></td></tr>
+        <tr style="background:var(--green-light)"><td><strong><span class="vi">Runway thực tế còn lại</span><span class="en">Actual runway remaining</span></strong></td><td style="text-align:right"><strong class="td-highlight">~9 tháng</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="highlight" style="border-left:4px solid var(--green);margin-top:.5rem">
+    <p class="vi">🎯 <strong>Tại sao đây là thời điểm đúng để đầu tư:</strong> Với 200M còn lại và burn rate 21.5M/tháng, công ty có thể tự vận hành đến đầu 2027 — nhưng <strong>đầu tư ngay trong Q3/2026 sẽ đúng lúc website live và pipeline B2B kích hoạt.</strong> Không phải xin tiền vì cạn vốn — mà scale đúng thời điểm momentum đang lên.</p>
+    <p class="en">🎯 <strong>Why now is the right time to invest:</strong> With 200M remaining and a 21.5M/month burn rate, the company can sustain itself into early 2027 — but <strong>investing in Q3/2026 aligns perfectly with website launch and B2B pipeline activation.</strong> This is not a distress ask — it's scaling at exactly the right moment of upward momentum.</p>
+  </div>
+</div>
+
+<!-- S7B USE OF FUNDS -->
+<div class="section" id="s7b">
+  <div class="sec-head"><div class="sec-num" style="background:var(--coral)">💰</div><div class="sec-title"><span class="vi">Sử dụng vốn đầu tư — Use of Funds</span><span class="en">Use of Funds</span></div></div>
+
+  <!-- A: ONE-TIME -->
+  <h3 style="font-size:.95rem;font-weight:700;color:var(--green);margin-bottom:.75rem">
+    <span style="background:var(--green);color:#fff;padding:2px 10px;border-radius:20px;margin-right:8px;font-size:.8rem">A</span>
+    <span class="vi">Đầu tư 1 lần</span><span class="en">One-Time Investment</span>
+  </h3>
+  <div class="tbl-wrap" style="margin-bottom:1.5rem">
+    <table>
+      <thead><tr><th><span class="vi">Hạng mục</span><span class="en">Item</span></th><th style="text-align:right">VND</th></tr></thead>
+      <tbody>
+        <tr><td>💻 <span class="vi">Laptop 9 máy × 18M</span><span class="en">Laptops × 9 units @ 18M</span></td><td style="text-align:right">162,000,000</td></tr>
+        <tr><td>🖥️ <span class="vi">Màn hình 9 cái × 6M</span><span class="en">Monitors × 9 units @ 6M</span></td><td style="text-align:right">54,000,000</td></tr>
+        <tr><td>🪑 <span class="vi">Bàn + ghế 9 bộ × 5.5M</span><span class="en">Desks + chairs × 9 sets @ 5.5M</span></td><td style="text-align:right">49,500,000</td></tr>
+        <tr><td>❄️ <span class="vi">Điều hoà + lắp đặt</span><span class="en">Air conditioning + installation</span></td><td style="text-align:right">20,000,000</td></tr>
+        <tr><td>🖨️ <span class="vi">Máy in + thiết bị văn phòng</span><span class="en">Printer + office equipment</span></td><td style="text-align:right">5,000,000</td></tr>
+        <tr><td>✈️ <span class="vi">Hội chợ du lịch Mỹ 2027 (2 người)</span><span class="en">US Travel Fair 2027 (2 people)</span></td><td style="text-align:right">201,000,000</td></tr>
+        <tr style="background:var(--green-light)"><td><strong><span class="vi">TỔNG A</span><span class="en">TOTAL A</span></strong></td><td style="text-align:right"><strong class="td-highlight">491,500,000</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- B: MONTHLY -->
+  <h3 style="font-size:.95rem;font-weight:700;color:var(--green);margin-bottom:.75rem">
+    <span style="background:var(--coral);color:#fff;padding:2px 10px;border-radius:20px;margin-right:8px;font-size:.8rem">B</span>
+    <span class="vi">Chi phí hàng tháng</span><span class="en">Monthly Recurring Costs</span>
+  </h3>
+  <div class="tbl-wrap" style="margin-bottom:1.5rem">
+    <table>
+      <thead><tr><th><span class="vi">Hạng mục</span><span class="en">Item</span></th><th style="text-align:right"><span class="vi">VND/tháng</span><span class="en">VND/month</span></th></tr></thead>
+      <tbody>
+        <tr><td colspan="2" style="background:#f8f8f8;font-weight:700;font-size:.8rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.5px"><span class="vi">Lương nhân sự (Gross)</span><span class="en">Staff Salaries (Gross)</span></td></tr>
+        <tr><td style="padding-left:1.5rem">👤 Phuc Vo — Founder &amp; CEO <span style="font-size:.78rem;color:var(--text-muted)">(HCMC)</span></td><td style="text-align:right">13,000,000</td></tr>
+        <tr><td style="padding-left:1.5rem">👤 Tai Pham — Co-Founder, Head of Sales <span style="font-size:.78rem;color:var(--text-muted)">(Long Xuyen)</span></td><td style="text-align:right">10,000,000</td></tr>
+        <tr><td style="padding-left:1.5rem">👤 Hao Duong — Operations Manager <span style="font-size:.78rem;color:var(--text-muted)">(HCMC)</span></td><td style="text-align:right">8,000,000</td></tr>
+        <tr><td style="padding-left:1.5rem">👤 Tran Nguyen — Pricing &amp; Portfolio <span style="font-size:.78rem;color:var(--text-muted)">(Long Xuyen)</span></td><td style="text-align:right">6,500,000</td></tr>
+        <tr><td style="padding-left:1.5rem">👥 Sales Executive × 3 <span style="font-size:.78rem;color:var(--text-muted)">(Long Xuyen · 5M each + commission 5%)</span></td><td style="text-align:right">15,000,000</td></tr>
+        <tr><td style="padding-left:1.5rem">👤 Kế toán — Accountant <span style="font-size:.78rem;color:var(--text-muted)">(Long Xuyen)</span></td><td style="text-align:right">5,000,000</td></tr>
+        <tr><td style="padding-left:1.5rem">👤 Marketing Executive <span style="font-size:.78rem;color:var(--text-muted)">(Long Xuyen)</span></td><td style="text-align:right">6,500,000</td></tr>
+        <tr><td style="padding-left:1.5rem;color:var(--text-muted)">📊 <span class="vi">BHXH chủ sử dụng lao động ~17.5%</span><span class="en">Employer social insurance ~17.5%</span></td><td style="text-align:right;color:var(--text-muted)">12,000,000</td></tr>
+        <tr><td colspan="2" style="background:#f8f8f8;font-weight:700;font-size:.8rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.5px"><span class="vi">Vận hành văn phòng</span><span class="en">Office Operations</span></td></tr>
+        <tr><td style="padding-left:1.5rem">🏢 <span class="vi">Thuê văn phòng Long Xuyen</span><span class="en">Office rent — Long Xuyen</span></td><td style="text-align:right">7,000,000</td></tr>
+        <tr><td style="padding-left:1.5rem">⚡ <span class="vi">Điện + internet + nước</span><span class="en">Electricity + internet + water</span></td><td style="text-align:right">2,500,000</td></tr>
+        <tr><td style="padding-left:1.5rem">💻 <span class="vi">Software / CRM / cloud tools</span><span class="en">Software / CRM / cloud tools</span></td><td style="text-align:right">2,000,000</td></tr>
+        <tr><td style="padding-left:1.5rem">📦 <span class="vi">Văn phòng phẩm + misc</span><span class="en">Office supplies + misc</span></td><td style="text-align:right">1,500,000</td></tr>
+        <tr style="background:var(--green-light)"><td><strong><span class="vi">TỔNG B</span><span class="en">TOTAL B</span></strong></td><td style="text-align:right"><strong class="td-highlight">89,000,000 / <span class="vi">tháng</span><span class="en">month</span></strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- C: BUFFER -->
+  <h3 style="font-size:.95rem;font-weight:700;color:var(--green);margin-bottom:.75rem">
+    <span style="background:#888;color:#fff;padding:2px 10px;border-radius:20px;margin-right:8px;font-size:.8rem">C</span>
+    <span class="vi">Dự phòng</span><span class="en">Buffer &amp; Contingency</span>
+  </h3>
+  <div class="tbl-wrap" style="margin-bottom:1.5rem">
+    <table>
+      <thead><tr><th><span class="vi">Hạng mục</span><span class="en">Item</span></th><th style="text-align:right">VND</th></tr></thead>
+      <tbody>
+        <tr><td>🔄 <span class="vi">Working capital — thanh toán nhà cung cấp trước khi nhận tiền khách</span><span class="en">Working capital — pay suppliers before client payment arrives</span></td><td style="text-align:right">200,000,000</td></tr>
+        <tr><td>⚠️ <span class="vi">Dự phòng phát sinh ngoài kế hoạch</span><span class="en">Unplanned contingency reserve</span></td><td style="text-align:right">150,000,000</td></tr>
+        <tr style="background:var(--green-light)"><td><strong><span class="vi">TỔNG C</span><span class="en">TOTAL C</span></strong></td><td style="text-align:right"><strong class="td-highlight">350,000,000</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- GRAND TOTAL -->
+  <div class="highlight" style="border-left:4px solid var(--green)">
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;text-align:center;margin-bottom:1rem">
+      <div><div style="font-size:.75rem;color:var(--text-muted);text-transform:uppercase;margin-bottom:.25rem"><span class="vi">Đầu tư 1 lần (A)</span><span class="en">One-Time (A)</span></div><div style="font-size:1.1rem;font-weight:700;color:var(--green)">491,500,000</div></div>
+      <div><div style="font-size:.75rem;color:var(--text-muted);text-transform:uppercase;margin-bottom:.25rem"><span class="vi">Hàng tháng (B)</span><span class="en">Monthly (B)</span></div><div style="font-size:1.1rem;font-weight:700;color:var(--coral)">89,000,000</div></div>
+      <div><div style="font-size:.75rem;color:var(--text-muted);text-transform:uppercase;margin-bottom:.25rem"><span class="vi">Dự phòng (C)</span><span class="en">Buffer (C)</span></div><div style="font-size:1.1rem;font-weight:700;color:#888">350,000,000</div></div>
+    </div>
+    <div style="text-align:center;padding-top:.75rem;border-top:1px solid rgba(0,0,0,.08)">
+      <div style="font-size:.75rem;color:var(--text-muted);text-transform:uppercase;margin-bottom:.25rem"><span class="vi">Tổng A + C (vốn cứng cần thiết)</span><span class="en">Total A + C (hard capital required)</span></div>
+      <div style="font-size:1.6rem;font-weight:800;color:var(--green)">841,500,000 VND</div>
+      <div style="font-size:.85rem;color:var(--text-muted);margin-top:.25rem">~$33,660 USD · <span class="vi">Phần B tự cover từ doanh thu T7/2026</span><span class="en">Part B covered by revenue from July 2026</span></div>
+    </div>
+    <div style="margin-top:1rem;padding:.75rem;background:rgba(46,125,82,.08);border-radius:8px;text-align:center">
+      <span class="vi">🎯 Nếu nhà đầu tư rót <strong>2.5B VND</strong> → Sau khi dùng 841.5M, còn dư <strong>~793,000,000 VND</strong> làm đệm an toàn ✅</span>
+      <span class="en">🎯 If the investor commits <strong>2.5B VND</strong> → After using 841.5M, remaining <strong>~793,000,000 VND</strong> as safety buffer ✅</span>
+    </div>
+  </div>
+</div>
+
+<!-- S8 -->
+<div class="section" id="s8">
+  <div class="sec-head"><div class="sec-num">8</div><div class="sec-title"><span class="vi">Lộ trình chiến lược 10 năm (2026–2035)</span><span class="en">10-Year Strategic Roadmap (2026–2035)</span></div></div>
+  <div class="metric-grid" style="margin-bottom:1.5rem">
+    <div class="metric"><div class="metric-label">Phase 1 (<span class="vi">Năm</span><span class="en">Yr</span> 1–3)</div><div class="metric-value">$300K→$1M</div><div class="metric-sub"><span class="vi">8–12 nhân sự · Chỉ Vietnam</span><span class="en">8–12 staff · Vietnam only</span></div></div>
+    <div class="metric"><div class="metric-label">Phase 2 (<span class="vi">Năm</span><span class="en">Yr</span> 4–7)</div><div class="metric-value">$3M–$5M</div><div class="metric-sub"><span class="vi">25–30 nhân sự · VN+Lào+Campuchia</span><span class="en">25–30 staff · VN+Laos+Cambodia</span></div></div>
+    <div class="metric coral"><div class="metric-label">Phase 3 (<span class="vi">Năm</span><span class="en">Yr</span> 8–10)</div><div class="metric-value">$10M</div><div class="metric-sub"><span class="vi">50 nhân sự · Dẫn đầu thị trường</span><span class="en">50 staff · Market leader</span></div></div>
+  </div>
+  <div class="timeline">
+    <div class="tl-item"><div class="tl-dot g"></div><div class="tl-top"><span class="phase-tag p1">Phase 1</span><span class="tl-year">2026</span></div><div class="tl-revenue">$30K–$50K</div><div class="tl-desc vi">10 bookings · Website live tháng 7 · 3 Signature Products · Team 5 người · B2B: Make Your Asia, Charu, Adi, Ms. Ngoc · Pháp lý chuẩn hoá</div><div class="tl-desc en">10 bookings · Website live July · 3 Signature Products · Team 5 · B2B: Make Your Asia, Charu, Adi, Ms. Ngoc · Legal structure completed</div></div>
+    <div class="tl-item"><div class="tl-dot g"></div><div class="tl-top"><span class="phase-tag p1">Phase 1</span><span class="tl-year">2027</span></div><div class="tl-revenue">$150K–$250K</div><div class="tl-desc vi">30–40 tour · Văn phòng Long Xuyên mở · CRM + AI Phase 2 live · Hội chợ du lịch Mỹ lần đầu · Ms. Ngoc convert khách Úc · Thở Cà Phê khai trương</div><div class="tl-desc en">30–40 tours · Long Xuyen office opens · CRM + AI Phase 2 live · First US travel fair · Ms. Ngoc converts Australian clients · Thở Cà Phê opens</div></div>
+    <div class="tl-item"><div class="tl-dot g"></div><div class="tl-top"><span class="phase-tag p1">Phase 1</span><span class="tl-year">2028</span></div><div class="tl-revenue">$700K–$1M</div><div class="tl-desc vi">60–80 tour · Team 10–12 người · Virtuoso-tier agent đầu tiên · Avg booking $12K–$20K · Portfolio Bắc + Trung hoàn thiện · Nghiên cứu sản phẩm Lào</div><div class="tl-desc en">60–80 tours · Team 10–12 · First Virtuoso-tier agent · Avg booking $12K–$20K · North + Central portfolio complete · Laos product research begins</div></div>
+    <div class="tl-item"><div class="tl-dot b"></div><div class="tl-top"><span class="phase-tag p2">Phase 2</span><span class="tl-year">2029</span></div><div class="tl-revenue phase2">$1.5M–$2M</div><div class="tl-desc vi">Ra mắt sản phẩm Lào (Luang Prabang) · Team 15–18 người · 2 đối tác Virtuoso active · FAM trips đầu tiên · Avg booking $20K–$30K</div><div class="tl-desc en">Laos launch (Luang Prabang) · Team 15–18 · 2 active Virtuoso partners · First FAM trips · Avg booking $20K–$30K</div></div>
+    <div class="tl-item"><div class="tl-dot b"></div><div class="tl-top"><span class="phase-tag p2">Phase 2</span><span class="tl-year">2030</span></div><div class="tl-revenue phase2">$2.5M–$3.5M</div><div class="tl-desc vi">Ra mắt Campuchia (Siem Reap + Cardamom) · Team 20–25 · Thành viên Traveller Made / Signature Travel Network · Thở Cà Phê 5+ cơ sở</div><div class="tl-desc en">Cambodia launch (Siem Reap + Cardamom) · Team 20–25 · Traveller Made / Signature Travel Network member · Thở Cà Phê 5+ locations</div></div>
+    <div class="tl-item"><div class="tl-dot b"></div><div class="tl-top"><span class="phase-tag p2">Phase 2</span><span class="tl-year">2031–2032</span></div><div class="tl-revenue phase2">$4M–$6M</div><div class="tl-desc vi">Team 25–30 · 5+ mạng lưới B2B quốc tế · NPS &gt;90 · AI guest memory hoàn chỉnh · Private Members Club concept</div><div class="tl-desc en">Team 25–30 · 5+ international B2B networks · NPS &gt;90 · AI guest memory complete · Private Members Club concept</div></div>
+    <div class="tl-item"><div class="tl-dot c"></div><div class="tl-top"><span class="phase-tag p3">Phase 3</span><span class="tl-year">2033–2034</span></div><div class="tl-revenue phase3">$6M–$9M</div><div class="tl-desc vi">Private Members Club soft launch · Legacy Journeys đầu tiên (chỉ theo lời mời) · Team 45 · Series A nếu cần cho mua lại tài sản</div><div class="tl-desc en">Private Members Club soft launch · First Legacy Journeys (invitation only) · Team 45 · Series A if needed for asset acquisitions</div></div>
+    <div class="tl-item"><div class="tl-dot c"></div><div class="tl-top"><span class="phase-tag p3">Phase 3</span><span class="tl-year">2035 🎯</span></div><div class="tl-revenue phase3">$10,000,000</div><div class="tl-desc vi">Team 50 · The Ant Adventures = thương hiệu luxury Indochina hàng đầu toàn cầu · Virtuoso + ILTM + Traveller Made · Tour Private Jet live · Thở Cà Phê 10+ cơ sở</div><div class="tl-desc en">Team 50 · The Ant Adventures = world's leading Indochina luxury brand · Virtuoso + ILTM + Traveller Made · Private Jet tours live · Thở Cà Phê 10+ locations</div></div>
+  </div>
+</div>
+
+<!-- S9 -->
+<div class="section" id="s9">
+  <div class="sec-head"><div class="sec-num">9</div><div class="sec-title"><span class="vi">Cam kết sáng lập viên — 10 năm</span><span class="en">Founder Commitments — 10 Years</span></div></div>
+  <div class="highlight" style="margin-bottom:1.25rem">
+    <p class="vi">Phuc Vo và Tai Pham cam kết gắn bó với The Ant Adventures toàn thời gian trong 10 năm. <strong>Đây không phải cam kết trên giấy — đây là dự án cuộc đời.</strong></p>
+    <p class="en">Phuc Vo and Tai Pham commit to The Ant Adventures full-time for 10 years. <strong>This is not a paper commitment — this is a life project.</strong></p>
+  </div>
+  <div class="tbl-wrap" style="margin-bottom:1.5rem">
+    <table>
+      <thead><tr><th><span class="vi">Hạng mục</span><span class="en">Item</span></th><th>Phuc Vo — CEO</th><th>Tai Pham — Head of Sales</th></tr></thead>
+      <tbody>
+        <tr><td><strong><span class="vi">Thời hạn</span><span class="en">Term</span></strong></td><td><span class="vi">10 năm full-time (2026–2035). Không exit không có sự đồng ý của Tai và nhà đầu tư.</span><span class="en">10 years full-time (2026–2035). No exit without Tai and investor agreement.</span></td><td><span class="vi">10 năm full-time (2026–2035). Không exit không có sự đồng ý của Phuc và nhà đầu tư.</span><span class="en">10 years full-time (2026–2035). No exit without Phuc and investor agreement.</span></td></tr>
+        <tr><td><strong><span class="vi">Vai trò cốt lõi</span><span class="en">Core Role</span></strong></td><td><span class="vi">Brand voice, cultural depth, client relationships, Geek UP 1x/tháng</span><span class="en">Brand voice, cultural depth, client relationships, Geek UP 1x/month</span></td><td><span class="vi">Revenue, pricing, CRM, B2B, operations, website, quote system</span><span class="en">Revenue, pricing, CRM, B2B, operations, website, quote system</span></td></tr>
+        <tr><td><strong>Non-compete</strong></td><td colspan="2" style="text-align:center"><span class="vi">Không xây dựng hoặc điều hành công ty du lịch inbound cạnh tranh trong 5 năm kể từ khi rời The Ant Adventures</span><span class="en">No building or operating a competing inbound travel company for 5 years after leaving The Ant Adventures</span></td></tr>
+        <tr><td><strong>Veto rule</strong></td><td colspan="2" style="text-align:center"><span class="vi">Mọi quyết định lớn (địa lý mới, đầu tư &gt;500M VND, gọi vốn mới) cần cả hai đồng ý bằng văn bản</span><span class="en">All major decisions (new geography, investment &gt;500M VND, new fundraising) require both founders' written agreement</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <h3 style="font-size:.95rem;font-weight:700;color:var(--green);margin-bottom:1rem"><span class="vi">Cam kết của Nhà đầu tư</span><span class="en">Investor Commitments</span></h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th><span class="vi">Cam kết</span><span class="en">Commitment</span></th><th><span class="vi">Chi tiết</span><span class="en">Detail</span></th></tr></thead>
+      <tbody>
+        <tr><td><strong><span class="vi">Không can thiệp điều hành</span><span class="en">No Operational Interference</span></strong></td><td><span class="vi">Nhà đầu tư không tham gia quyết định điều hành hàng ngày — Phuc và Tai toàn quyền chiến lược.</span><span class="en">The investor does not participate in daily operational decisions — Phuc and Tai have full strategic authority.</span></td></tr>
+        <tr><td><strong><span class="vi">Khóa vốn tối thiểu</span><span class="en">Minimum Lock-in</span></strong></td><td><span class="vi">Cam kết không rút vốn trước 36 tháng. Khuyến nghị giữ đến hết Năm 5.</span><span class="en">Committed not to withdraw capital before 36 months. Recommended to hold until end of Year 5.</span></td></tr>
+        <tr><td><strong>Quarterly Review</strong></td><td><span class="vi">Nhận báo cáo Q1/Q2/Q3/Q4 từ Tai. Quyền đặt câu hỏi — kênh cập nhật chính thức duy nhất.</span><span class="en">Receives Q1/Q2/Q3/Q4 reports from Tai. Right to ask questions — the only official update channel.</span></td></tr>
+        <tr><td><strong>Right of First Refusal</strong></td><td><span class="vi">Nếu Phuc hoặc Tai muốn bán cổ phần, Nhà đầu tư có quyền ưu tiên mua trong 30 ngày.</span><span class="en">If Phuc or Tai wants to sell shares, The investor has priority purchase right within 30 days.</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- S10 -->
+<div class="section" id="s10">
+  <div class="sec-head"><div class="sec-num">10</div><div class="sec-title"><span class="vi">Kế hoạch hội chợ du lịch quốc tế — Mỹ 2027</span><span class="en">International Travel Fair — USA 2027</span></div></div>
+  <div class="metric-grid" style="margin-bottom:1.25rem">
+    <div class="metric"><div class="metric-label"><span class="vi">Thời gian</span><span class="en">When</span></div><div class="metric-value">Aug 2027</div><div class="metric-sub">Virtuoso Travel Week — Las Vegas</div></div>
+    <div class="metric"><div class="metric-label"><span class="vi">Đại diện</span><span class="en">Attendees</span></div><div class="metric-value">Phuc + Tai</div><div class="metric-sub"><span class="vi">Cả hai founders</span><span class="en">Both founders</span></div></div>
+    <div class="metric"><div class="metric-label"><span class="vi">Agents mục tiêu</span><span class="en">Target Agents</span></div><div class="metric-value">20–30</div><div class="metric-sub">Luxury operators &amp; agents</div></div>
+    <div class="metric coral"><div class="metric-label"><span class="vi">Ngân sách</span><span class="en">Budget</span></div><div class="metric-value">$8K–$15K</div><div class="metric-sub"><span class="vi">Cho 2 người</span><span class="en">For 2 people</span></div></div>
+  </div>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th><span class="vi">Hạng mục chuẩn bị</span><span class="en">Preparation Item</span></th><th><span class="vi">Chi tiết</span><span class="en">Detail</span></th></tr></thead>
+      <tbody>
+        <tr><td><strong><span class="vi">Tài liệu công ty</span><span class="en">Company Materials</span></strong></td><td><span class="vi">Brochure chuyên nghiệp · Business card song ngữ · USB / QR Code digital press kit · Company fact sheet 1 trang</span><span class="en">Professional brochure · Bilingual business cards · USB / QR digital press kit · 1-page company fact sheet</span></td></tr>
+        <tr><td><strong><span class="vi">Sản phẩm &amp; Portfolio</span><span class="en">Products &amp; Portfolio</span></strong></td><td><span class="vi">3–5 Signature Journey cards · B2B rate sheet (bảo mật) · Mẫu itinerary · Kho ảnh thực tế</span><span class="en">3–5 Signature Journey cards · B2B rate sheet (confidential) · Sample itinerary · Real photo library</span></td></tr>
+        <tr><td><strong><span class="vi">Công cụ bán hàng</span><span class="en">Sales Tools</span></strong></td><td><span class="vi">Cơ cấu hoa hồng agent (10–20% Virtuoso-tier) · Lời mời FAM trip · Testimonials · Case study tour thực</span><span class="en">Agent commission structure (10–20% Virtuoso-tier) · FAM trip invitation · Testimonials · Real tour case study</span></td></tr>
+        <tr><td><strong><span class="vi">Hiện diện digital</span><span class="en">Digital Presence</span></strong></td><td><span class="vi">Website live và hoàn chỉnh — BẮT BUỘC · Instagram active · LinkedIn company page · Email @theantadventures.com</span><span class="en">Website live and complete — MANDATORY · Instagram active · LinkedIn company page · @theantadventures.com emails</span></td></tr>
+        <tr><td><strong><span class="vi">Tại hội chợ</span><span class="en">At the Fair</span></strong></td><td><span class="vi">Đặt lịch hẹn trước khi bay · Danh sách 20–30 agents mục tiêu · Email follow-up gửi trong 24h · Quà lưu niệm Việt Nam</span><span class="en">Schedule meetings before departure · List of 20–30 target agents · Follow-up email sent within 24h · Vietnam souvenir gifts</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- S11 -->
+<div class="section" id="s11">
+  <div class="sec-head"><div class="sec-num">11</div><div class="sec-title"><span class="vi">Dự án song song — Thở Cà Phê</span><span class="en">Parallel Venture — Thở Cà Phê</span></div></div>
+  <div class="highlight coral" style="margin-bottom:1.25rem">
+    <p class="vi"><strong>⚠ Lưu ý quan trọng:</strong> Thở Cà Phê là dự án độc lập, tách biệt hoàn toàn với The Ant Adventures. Không dùng tài nguyên, thời gian hay ngân sách của The Ant Adventures.</p>
+    <p class="en"><strong>⚠ Important Note:</strong> Thở Cà Phê is an independent project, completely separate from The Ant Adventures. No resources, time or budget of The Ant Adventures is used.</p>
+  </div>
+  <div class="tbl-wrap" style="margin-bottom:1.25rem">
+    <table>
+      <thead><tr><th><span class="vi">Hạng mục</span><span class="en">Item</span></th><th><span class="vi">Chi tiết</span><span class="en">Detail</span></th></tr></thead>
+      <tbody>
+        <tr><td><strong><span class="vi">Chủ dự án</span><span class="en">Project Owner</span></strong></td><td>Tai Pham</td></tr>
+        <tr><td><strong><span class="vi">Đồng phát triển</span><span class="en">Co-developers</span></strong></td><td>Phuc Vo + Ms. Ngoc</td></tr>
+        <tr><td><strong><span class="vi">Tầm nhìn</span><span class="en">Vision</span></strong></td><td><span class="vi">Phát triển thành thương hiệu nhượng quyền khu vực Đồng bằng Sông Cửu Long</span><span class="en">Develop into a franchise brand across the Mekong Delta region</span></td></tr>
+        <tr><td><strong><span class="vi">Khai trương đầu tiên</span><span class="en">First Opening</span></strong></td><td><span class="vi">Dự kiến tháng 2 năm 2027</span><span class="en">Expected February 2027</span></td></tr>
+        <tr><td><strong><span class="vi">Địa bàn mục tiêu</span><span class="en">Target Area</span></strong></td><td><span class="vi">Đồng bằng Sông Cửu Long</span><span class="en">Mekong Delta</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- S12 -->
+<div class="section" id="s12">
+  <div class="sec-head"><div class="sec-num">12</div><div class="sec-title"><span class="vi">Công việc cần giải quyết — Pending Actions</span><span class="en">Pending Actions</span></div></div>
+  <div style="font-size:13px;color:var(--text-muted);margin-bottom:1.25rem"><span class="vi">Cập nhật: 21 tháng 5 năm 2026. Cả 3 hạng mục có thể làm cùng lúc trong 1 lần đến gặp Ms. Hong.</span><span class="en">Updated: May 21, 2026. All 3 items can be done in a single visit to Ms. Hong.</span></div>
+  <div class="pending-item">
+    <div class="pending-head"><div class="pending-title"><span class="vi">1. Sửa tên công ty — Lỗi chính tả</span><span class="en">1. Company Name Correction — Typo</span></div><span class="status-pill"><span class="vi">CHƯA XỬ LÝ</span><span class="en">PENDING</span></span></div>
+    <div class="pending-desc">
+      <div class="vi"><strong>Vấn đề:</strong> Tên đăng ký có lỗi — "andventures" thay vì "adventures".<br><strong>Hành động:</strong> Phuc làm việc với Ms. Hong nộp hồ sơ sửa tên tại Sở Kế hoạch &amp; Đầu tư.</div>
+      <div class="en"><strong>Issue:</strong> Registered name has a typo — "andventures" instead of "adventures".<br><strong>Action:</strong> Phuc works with Ms. Hong to file name correction at the Department of Planning &amp; Investment.</div>
+    </div>
+    <div class="owner-line"><span class="vi">Chủ sở hữu:</span><span class="en">Owner:</span> <strong>Phuc Vo + Ms. Hong</strong></div>
+  </div>
+  <div class="pending-item">
+    <div class="pending-head"><div class="pending-title"><span class="vi">2. Địa chỉ đăng ký kinh doanh — Cần cập nhật</span><span class="en">2. Business Registration Address — Needs Update</span></div><span class="status-pill"><span class="vi">CHƯA XỬ LÝ</span><span class="en">PENDING</span></span></div>
+    <div class="pending-desc">
+      <div class="vi"><strong>Phương án A:</strong> Địa chỉ nhà Ms. Hong — linh hoạt, chi phí thấp, nhưng kém chuyên nghiệp với đối tác quốc tế.<br><strong>Phương án B:</strong> MindX Space (70 Phạm Ngọc Thạch, Q.3) — đăng ký địa chỉ KD, lễ tân, nhận thư. Chuyên nghiệp hơn cho B2B quốc tế.</div>
+      <div class="en"><strong>Option A:</strong> Ms. Hong's home address — flexible, low cost, but less professional for international partners.<br><strong>Option B:</strong> MindX Space (70 Pham Ngoc Thach, D.3) — business address registration, reception, mail handling. More professional for international B2B.</div>
+    </div>
+    <div class="owner-line"><span class="vi">Chủ sở hữu:</span><span class="en">Owner:</span> <strong>Phuc Vo + Ms. Hong</strong></div>
+  </div>
+  <div class="pending-item">
+    <div class="pending-head"><div class="pending-title"><span class="vi">3. Vốn điều lệ — Điều chỉnh về mức thực tế</span><span class="en">3. Charter Capital — Adjust to Actual Level</span></div><span class="status-pill"><span class="vi">CHƯA XỬ LÝ</span><span class="en">PENDING</span></span></div>
+    <div class="pending-desc">
+      <div class="vi">Vốn điều lệ hiện đăng ký cao hơn mức thực tế — cần điều chỉnh để đảm bảo sạch về thuế và uy tín trước nhà đầu tư.</div>
+      <div class="en">Current registered capital is higher than actual — needs adjustment to ensure clean tax records and credibility with investors.</div>
+    </div>
+    <div class="tbl-wrap" style="margin:.75rem 0">
+      <table>
+        <thead><tr><th><span class="vi">Đợt</span><span class="en">Round</span></th><th>Tai Pham (VND)</th><th>Phuc Vo (VND)</th><th><span class="vi">Tổng</span><span class="en">Total</span></th></tr></thead>
+        <tbody>
+          <tr><td><span class="vi">Đợt</span><span class="en">Round</span> 1</td><td>400,000,000</td><td>250,000,000</td><td class="td-highlight">650,000,000</td></tr>
+          <tr><td><span class="vi">Đợt</span><span class="en">Round</span> 2</td><td>200,000,000</td><td>200,000,000</td><td class="td-highlight">400,000,000</td></tr>
+          <tr><td><strong>TOTAL</strong></td><td class="td-highlight">600,000,000 (57.1%)</td><td class="td-highlight">450,000,000 (42.9%)</td><td class="td-highlight">1,050,000,000 VND</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="owner-line"><span class="vi">Chủ sở hữu:</span><span class="en">Owner:</span> <strong>Phuc Vo + Tai Pham + Ms. Hong</strong></div>
+  </div>
+</div>
+
+<!-- S13 -->
+<div class="section" id="s13">
+  <div class="sec-head"><div class="sec-num">13</div><div class="sec-title"><span class="vi">Phân tích đối thủ — 10 công ty luxury tour Vietnam</span><span class="en">Competitor Analysis — Top 10 Vietnam Luxury Tour Companies</span></div></div>
+  <h3 style="font-size:.9rem;font-weight:700;color:var(--text-muted);margin-bottom:.85rem;text-transform:uppercase;letter-spacing:.5px"><span class="vi">3 Khoảng trắng cạnh tranh — Chưa ai sở hữu</span><span class="en">3 Competitive White Spaces — Unclaimed</span></h3>
+  <div class="ws-grid" style="margin-bottom:2rem">
+    <div class="ws-box"><div class="ws-num">1</div><div class="ws-title">"Founder-present" Luxury</div><div class="ws-desc vi">Không ai có Phúc Võ — người sáng lập từ Trà Vinh, đi cùng khách, là chính sản phẩm. Không thể sao chép.</div><div class="ws-desc en">No competitor has Phuc Vo — a founder from Tra Vinh who travels with guests and is the product. Cannot be copied.</div></div>
+    <div class="ws-box"><div class="ws-num">2</div><div class="ws-title">South Vietnam + Mekong Luxury</div><div class="ws-desc vi">Tất cả đối thủ tập trung vào Hà Nội / Hạ Long. Nam Việt Nam và Mekong Delta ở cấp UHNW gần như bỏ ngỏ.</div><div class="ws-desc en">All competitors focus on Hanoi / Ha Long. South Vietnam and Mekong Delta at UHNW level are virtually unclaimed.</div></div>
+    <div class="ws-box"><div class="ws-num">3</div><div class="ws-title">"No Groups. No Catalog."</div><div class="ws-desc vi">A&amp;K vẫn có group 14–20 người. Chúng ta không bao giờ có. Đây là tuyên ngôn định vị mạnh nhất trong phân khúc UHNW.</div><div class="ws-desc en">A&amp;K still runs groups of 14–20. We never will. This is the strongest positioning statement in the UHNW segment.</div></div>
+  </div>
+  <div class="comp-card">
+    <div class="comp-head"><div><div class="comp-name">1. Lux Travel DMC (LuxGroup)</div><div class="comp-sub">Hanoi · Vietnam-based · Founded 2005 · Dr. Pham Ha</div></div><div class="comp-rating">⭐⭐⭐⭐⭐ <span class="vi">Đối thủ mạnh nhất địa phương</span><span class="en">Strongest local competitor</span></div></div>
+    <div class="comp-row">
+      <div><div class="comp-col-label"><span class="vi">Điểm mạnh</span><span class="en">Strengths</span></div><div class="comp-col-body vi">Vietnam's Best Intl Tour Operator 2025 · Fleet cruise riêng tại Hạ Long · Quan hệ B2B EU lâu dài</div><div class="comp-col-body en">Vietnam's Best Intl Tour Operator 2025 · Own cruise fleet in Ha Long · Long-standing EU B2B relationships</div></div>
+      <div><div class="comp-col-label"><span class="vi">Điểm yếu</span><span class="en">Weaknesses</span></div><div class="comp-col-body vi">Nặng về Bắc — Nam &amp; Mekong mỏng · Cảm giác corporate, ít cá nhân</div><div class="comp-col-body en">Heavy North focus — South &amp; Mekong thin · Corporate feel, not personal</div></div>
+    </div>
+    <div class="comp-advantage">🐜 <strong>The Ant Advantage:</strong> <span class="vi">Sở hữu miền Nam + Mekong. Founder story Trà Vinh — thứ Lux DMC không bao giờ có được.</span><span class="en">Own the South + Mekong. Tra Vinh founder story — something Lux DMC can never have.</span></div>
+  </div>
+  <div class="comp-card">
+    <div class="comp-head"><div><div class="comp-name">6. Abercrombie &amp; Kent Vietnam</div><div class="comp-sub">UK/Chicago global operator · 60+ years</div></div><div class="comp-rating">⭐⭐⭐⭐ <span class="vi">Cùng UHNW — group-focused</span><span class="en">Same UHNW tier — group-focused</span></div></div>
+    <div class="comp-row">
+      <div><div class="comp-col-label"><span class="vi">Điểm mạnh</span><span class="en">Strengths</span></div><div class="comp-col-body vi">Thương hiệu luxury travel nổi tiếng nhất thế giới · 55+ văn phòng · Virtuoso &amp; Traveller Made relationships</div><div class="comp-col-body en">World's most recognised luxury travel brand · 55+ offices · Virtuoso &amp; Traveller Made relationships</div></div>
+      <div><div class="comp-col-label"><span class="vi">Điểm yếu</span><span class="en">Weaknesses</span></div><div class="comp-col-body vi">Group 14–20 người — không truly bespoke · Vietnam là 1 trong 60+ destinations</div><div class="comp-col-body en">Groups of 14–20 — not truly bespoke · Vietnam is 1 of 60+ destinations</div></div>
+    </div>
+    <div class="comp-advantage">🐜 <strong>The Ant Advantage:</strong> <span class="vi">"Bạn đã làm A&amp;K version. Bây giờ hãy làm của chúng tôi." UHNW đã đi A&amp;K group tour tìm đến chúng ta cho real Vietnam.</span><span class="en">"You've done the A&amp;K version. Now do ours." UHNW guests who've done A&amp;K group tours seek us for the real Vietnam.</span></div>
+  </div>
+  <div class="comp-card">
+    <div class="comp-head"><div><div class="comp-name">7. Scott Dunn &nbsp;&nbsp;|&nbsp;&nbsp; 8. Artisans of Leisure</div><div class="comp-sub">UK/US ultra-luxury · Vietnam ground ops outsourced</div></div><div class="comp-rating">⭐⭐⭐ B2B <span class="vi">Cơ hội</span><span class="en">Opportunity</span></div></div>
+    <div class="comp-advantage">🐜 <strong>The Ant Advantage:</strong> <span class="vi">Scott Dunn và Artisans of Leisure là <strong>B2B partnership targets</strong> — chúng ta nên là preferred ground partner của họ tại Vietnam.</span><span class="en">Scott Dunn and Artisans of Leisure are <strong>B2B partnership targets</strong> — we should be their preferred ground partner in Vietnam.</span></div>
+  </div>
+  <div class="tbl-wrap" style="margin-top:1.5rem">
+    <table>
+      <thead><tr><th>#</th><th><span class="vi">Công ty</span><span class="en">Company</span></th><th>PPD</th><th>UHNW Fit</th><th>The Ant Advantage</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td><strong>Lux Travel DMC</strong></td><td>$600–900</td><td><span class="badge badge-purple">Medium</span></td><td><span class="vi">South VN + Founder story</span><span class="en">South VN + Founder story</span></td></tr>
+        <tr><td>6</td><td><strong>Abercrombie &amp; Kent</strong></td><td>$875–1,500</td><td><span class="badge badge-green">High</span></td><td><span class="vi">Không group, true bespoke</span><span class="en">No groups, true bespoke</span></td></tr>
+        <tr><td>7</td><td><strong>Scott Dunn</strong></td><td>$1,000+</td><td><span class="badge badge-green">High</span></td><td><span class="vi">B2B partner opportunity</span><span class="en">B2B partner opportunity</span></td></tr>
+        <tr><td>8</td><td><strong>Artisans of Leisure</strong></td><td>$1,500+</td><td><span class="badge badge-green">Very High</span></td><td><span class="vi">B2B ground partner target</span><span class="en">B2B ground partner target</span></td></tr>
+        <tr style="background:var(--green-light)"><td>🐜</td><td><strong>The Ant Adventures</strong></td><td class="td-highlight">$800–$1,500+</td><td><span class="badge badge-green">UHNW Only</span></td><td class="td-highlight"><span class="vi">Founder present · No groups · Mekong depth</span><span class="en">Founder present · No groups · Mekong depth</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- S14 -->
+<div class="section" id="s14">
+  <div class="sec-head"><div class="sec-num">14</div><div class="sec-title"><span class="vi">Product Portfolio — 8 Core Tours (2026)</span><span class="en">Product Portfolio — 8 Core Tours (2026)</span></div></div>
+  <div class="metric-grid" style="margin-bottom:1.5rem">
+    <div class="metric"><div class="metric-label"><span class="vi">Số tours</span><span class="en">Tours</span></div><div class="metric-value">8</div><div class="metric-sub"><span class="vi">Core itineraries · Adapt 100%</span><span class="en">Core itineraries · 100% adaptable</span></div></div>
+    <div class="metric"><div class="metric-label"><span class="vi">Ngắn nhất</span><span class="en">Shortest</span></div><div class="metric-value">5N/6D</div><div class="metric-sub">T05 · Southern Vietnam</div></div>
+    <div class="metric"><div class="metric-label"><span class="vi">Dài nhất</span><span class="en">Longest</span></div><div class="metric-value">18N/19D</div><div class="metric-sub">T07 · Grand Vietnam Flagship</div></div>
+    <div class="metric coral"><div class="metric-label"><span class="vi">Giá PPD mục tiêu</span><span class="en">Target PPD</span></div><div class="metric-value">$800–$1,500+</div><div class="metric-sub">USD / <span class="vi">người / ngày</span><span class="en">person / day</span></div></div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:1.5rem">
+    <div class="card" style="border-top:3px solid var(--green);padding:1.4rem">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.6rem"><div><span class="badge badge-green">T01</span><span class="badge badge-gray">7N · 8D</span></div><span style="font-size:11px;font-weight:700;color:var(--green);background:var(--green-light);padding:3px 10px;border-radius:12px"><span class="vi">Miền Bắc</span><span class="en">North</span></span></div>
+      <div style="font-weight:700;font-size:.95rem;margin-bottom:.3rem">North Vietnam Soft Adventure</div>
+      <div style="font-size:12.5px;color:var(--text-muted);margin-bottom:.7rem">Hanoi · Ninh Binh · Mai Chau</div>
+      <div style="font-size:13px;color:var(--text-muted);line-height:1.6"><span class="vi">Từ phố cổ Hà Nội đến sương mù thung lũng Mai Châu — hành trình khám phá miền Bắc ở nhịp điệu chậm rãi và sâu sắc nhất.</span><span class="en">From the ancient streets of Hanoi to the misty valleys of Mai Chau — a journey through the North at its most unhurried and profound.</span></div>
+      <div style="margin-top:.85rem;padding-top:.75rem;border-top:1px solid var(--border);font-size:12px;color:var(--text-light)">Boutique 4★ &amp; Eco-Lodge &nbsp;·&nbsp; <span class="vi">Bắt đầu &amp; kết thúc tại Hà Nội</span><span class="en">Start &amp; end Hanoi</span></div>
+    </div>
+    <div class="card" style="border-top:3px solid var(--green);padding:1.4rem">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.6rem"><div><span class="badge badge-green">T02</span><span class="badge badge-gray">6N · 7D</span></div><span style="font-size:11px;font-weight:700;color:var(--green);background:var(--green-light);padding:3px 10px;border-radius:12px"><span class="vi">Miền Trung</span><span class="en">Central</span></span></div>
+      <div style="font-weight:700;font-size:.95rem;margin-bottom:.3rem">Heritage &amp; Slow Life — Central Vietnam</div>
+      <div style="font-size:12.5px;color:var(--text-muted);margin-bottom:.7rem">Hue · Hai Van Pass · Hoi An</div>
+      <div style="font-size:13px;color:var(--text-muted);line-height:1.6"><span class="vi">Ký ức hoàng triều và những con hẻm đèn lồng — miền Trung ở đúng nhịp điệu mà nó xứng đáng được khám phá.</span><span class="en">Imperial memories and lantern-lit alleyways — Central Vietnam at the pace it deserves to be explored.</span></div>
+      <div style="margin-top:.85rem;padding-top:.75rem;border-top:1px solid var(--border);font-size:12px;color:var(--text-light)">Boutique 4★ &nbsp;·&nbsp; Hue (HUI) → Da Nang (DAD)</div>
+    </div>
+    <div class="card" style="border-top:3px solid var(--green);padding:1.4rem">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.6rem"><div><span class="badge badge-green">T05</span><span class="badge badge-gray">5N · 6D</span></div><span style="font-size:11px;font-weight:700;color:var(--green);background:var(--green-light);padding:3px 10px;border-radius:12px"><span class="vi">Miền Nam</span><span class="en">South</span></span></div>
+      <div style="font-weight:700;font-size:.95rem;margin-bottom:.3rem">Southern Vietnam Discovery</div>
+      <div style="font-size:12.5px;color:var(--text-muted);margin-bottom:.7rem">HCMC · Cu Chi · Cai Be · Can Tho</div>
+      <div style="font-size:13px;color:var(--text-muted);line-height:1.6"><span class="vi">Miền Nam trong vị ngọt đầy đủ — Sài Gòn nhiệt huyết, lịch sử Củ Chi, và những dòng kênh sống động của Đồng bằng Sông Cửu Long.</span><span class="en">The South in full flavour — the energy of Saigon, the history of Cu Chi, and the vibrant waterways of the Mekong Delta.</span></div>
+      <div style="margin-top:.85rem;padding-top:.75rem;border-top:1px solid var(--border);font-size:12px;color:var(--text-light)">Boutique 4★ &nbsp;·&nbsp; <span class="vi">Bắt đầu &amp; kết thúc SGN · The Ant's home ground</span><span class="en">Start &amp; end SGN · The Ant's home ground</span></div>
+    </div>
+    <div class="card" style="border-top:3px solid var(--coral);padding:1.4rem">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.6rem"><div><span class="badge badge-coral">T07</span><span class="badge badge-gray">18N · 19D</span><span class="badge badge-coral">🏆 FLAGSHIP</span></div></div>
+      <div style="font-weight:700;font-size:.95rem;margin-bottom:.3rem">Grand Vietnam Journey — North to South</div>
+      <div style="font-size:12.5px;color:var(--text-muted);margin-bottom:.7rem">Hanoi · Ninh Binh · Mai Chau · Hue · Hoi An · Mekong · HCMC</div>
+      <div style="font-size:13px;color:var(--text-muted);line-height:1.6"><span class="vi">Cung bậc đầy đủ của Việt Nam — bảy điểm đến, mười tám đêm, một hành trình được thiết kế để kéo dài suốt đời.</span><span class="en">The full range of Vietnam — seven destinations, eighteen nights, a journey designed to last a lifetime.</span></div>
+      <div style="margin-top:.85rem;padding-top:.75rem;border-top:1px solid var(--border);font-size:12px;color:var(--text-light)">Boutique 4★ &amp; Eco-Lodge &nbsp;·&nbsp; HAN → SGN &nbsp;·&nbsp; <span class="vi">Avg booking value cao nhất</span><span class="en">Highest avg booking value</span></div>
+    </div>
+  </div>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th><span class="vi">Mã</span><span class="en">Code</span></th><th><span class="vi">Tên Tour</span><span class="en">Tour Name</span></th><th><span class="vi">Thời gian</span><span class="en">Duration</span></th><th><span class="vi">Booking Value Est.</span><span class="en">Booking Value Est.</span></th></tr></thead>
+      <tbody>
+        <tr><td><strong>T01</strong></td><td>North Vietnam Soft Adventure</td><td>7N/8D</td><td class="td-highlight">$5,600–$9,600</td></tr>
+        <tr><td><strong>T02</strong></td><td>Heritage &amp; Slow Life Central</td><td>6N/7D</td><td class="td-highlight">$4,800–$8,400</td></tr>
+        <tr><td><strong>T03</strong></td><td>Vietnam Highlights First Timers</td><td>9N/10D</td><td class="td-highlight">$7,200–$12,000</td></tr>
+        <tr><td><strong>T04</strong></td><td>Tailor-Made Family Journey</td><td>7–21D</td><td class="td-highlight">$8,000–$25,000+</td></tr>
+        <tr><td><strong>T05</strong></td><td>Southern Vietnam Discovery</td><td>5N/6D</td><td class="td-highlight">$4,000–$7,200</td></tr>
+        <tr><td><strong>T06</strong></td><td>Vietnam In Depth</td><td>15N/16D</td><td class="td-highlight">$12,000–$20,000</td></tr>
+        <tr><td><strong>T07 🏆</strong></td><td>Grand Vietnam Flagship</td><td>18N/19D</td><td class="td-highlight">$14,400–$28,500+</td></tr>
+        <tr><td><strong>T08</strong></td><td>Vietnam Family Discovery</td><td>14N/15D</td><td class="td-highlight">$11,200–$18,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- S15 -->
+<div class="section" id="s15">
+  <div class="sec-head"><div class="sec-num">15</div><div class="sec-title"><span class="vi">Mô hình tài chính — 2026 → 2028</span><span class="en">Financial Model — 2026 → 2028</span></div></div>
+  <div class="metric-grid" style="margin-bottom:1.5rem">
+    <div class="metric dark"><div class="metric-label"><span class="vi">Doanh thu tích lũy (4 tháng)</span><span class="en">Revenue to Date (4 months)</span></div><div class="metric-value">$6,213</div><div class="metric-sub">~158M VND · Feb–May 2026</div></div>
+    <div class="metric"><div class="metric-label"><span class="vi">Lợi nhuận ròng</span><span class="en">Net Profit</span></div><div class="metric-value">$3,173</div><div class="metric-sub">Margin ~51%</div></div>
+    <div class="metric"><div class="metric-label"><span class="vi">Tours hoàn thành</span><span class="en">Tours Completed</span></div><div class="metric-value">8</div><div class="metric-sub">Feb–May 2026</div></div>
+    <div class="metric coral"><div class="metric-label"><span class="vi">Chi phí/tháng hiện tại</span><span class="en">Current Monthly Cost</span></div><div class="metric-value">~$375</div><div class="metric-sub"><span class="vi">Trước đầu tư</span><span class="en">Pre-investment</span></div></div>
+  </div>
+  <h3 style="font-size:.9rem;font-weight:700;color:var(--text-muted);margin-bottom:.85rem;text-transform:uppercase;letter-spacing:.5px"><span class="vi">Dự báo theo tháng — Năm 1 (2026)</span><span class="en">Monthly Projection — Year 1 (2026)</span></h3>
+  <div class="tbl-wrap" style="margin-bottom:1.5rem">
+    <table>
+      <thead><tr><th><span class="vi">Tháng</span><span class="en">Month</span></th><th><span class="vi">Giai đoạn</span><span class="en">Phase</span></th><th><span class="vi">Bookings</span><span class="en">Bookings</span></th><th><span class="vi">Rev Est.</span><span class="en">Rev Est.</span></th><th><span class="vi">Lợi nhuận</span><span class="en">Profit</span></th></tr></thead>
+      <tbody>
+        <tr><td>Feb–May</td><td><span class="badge badge-green"><span class="vi">Thực tế</span><span class="en">Actual</span></span></td><td>8 tours</td><td class="td-highlight">$6,213</td><td class="td-pos">+$3,173</td></tr>
+        <tr><td><span class="vi">Tháng</span><span class="en">Month</span> 6</td><td><span class="badge badge-gray">Build-up</span></td><td>1–2</td><td>$1,500–$3,000</td><td class="td-pos">+$1,125–$2,625</td></tr>
+        <tr><td><span class="vi">Tháng</span><span class="en">Month</span> 7</td><td><span class="badge badge-coral"><span class="vi">Website live</span><span class="en">Website live</span></span></td><td>2–3</td><td>$3,000–$5,000</td><td class="td-highlight">Break-even</td></tr>
+        <tr><td><span class="vi">Tháng</span><span class="en">Month</span> 8</td><td><span class="badge badge-green">Post-launch</span></td><td>2–3</td><td>$4,000–$7,000</td><td class="td-pos">+$1,500–$4,500</td></tr>
+        <tr><td><span class="vi">Tháng</span><span class="en">Month</span> 9–10</td><td><span class="badge badge-green">High season</span></td><td>3–4/<span class="vi">tháng</span><span class="en">mo</span></td><td>$5,000–$9,000</td><td class="td-pos">+$2,500–$6,500</td></tr>
+        <tr><td><span class="vi">Tháng</span><span class="en">Month</span> 11–12</td><td><span class="badge badge-coral">Peak season</span></td><td>4–6/<span class="vi">tháng</span><span class="en">mo</span></td><td>$8,000–$15,000</td><td class="td-pos">+$5,000–$12,000</td></tr>
+        <tr style="background:var(--green-light)"><td colspan="2"><strong><span class="vi">TỔNG NĂM 1</span><span class="en">YEAR 1 TOTAL</span></strong></td><td class="td-highlight"><strong>~20–30 tours</strong></td><td class="td-highlight"><strong>$30,000–$50,000</strong></td><td class="td-pos"><strong>+$5,000–$25,000</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <h3 style="font-size:.9rem;font-weight:700;color:var(--text-muted);margin-bottom:.85rem;text-transform:uppercase;letter-spacing:.5px"><span class="vi">Dự báo 3 năm — Phase 1 (2026–2028)</span><span class="en">3-Year Projection — Phase 1 (2026–2028)</span></h3>
+  <div class="tbl-wrap" style="margin-bottom:1.25rem">
+    <table>
+      <thead><tr><th><span class="vi">Năm</span><span class="en">Year</span></th><th><span class="vi">Bookings</span><span class="en">Bookings</span></th><th>Avg Value</th><th><span class="vi">Doanh thu</span><span class="en">Revenue</span></th><th>EBITDA</th><th><span class="vi">Team</span><span class="en">Team</span></th></tr></thead>
+      <tbody>
+        <tr><td><strong>2026</strong></td><td>20–30</td><td>$1,500–$2,000</td><td class="td-highlight">$30K–$50K</td><td class="td-pos">+$5K–$25K</td><td><span class="vi">5 người</span><span class="en">5 people</span></td></tr>
+        <tr><td><strong>2027</strong></td><td>60–80</td><td>$2,500–$4,000</td><td class="td-highlight">$150K–$250K</td><td class="td-pos">+$50K–$150K</td><td><span class="vi">8–10 người</span><span class="en">8–10 people</span></td></tr>
+        <tr><td><strong>2028</strong></td><td>120–150</td><td>$5,000–$8,000</td><td class="td-highlight">$700K–$1M</td><td class="td-pos">+$350K–$650K</td><td><span class="vi">10–12 người</span><span class="en">10–12 people</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="highlight">
+    <p class="vi"><strong>Break-even point:</strong> The Ant Adventures cần đạt <strong>~$2,500 USD doanh thu/tháng</strong> để tự trang trải chi phí vận hành sau đầu tư. Break-even có thể đạt được từ <strong>Tháng 8–9/2026</strong> sau khi website live và pipeline B2B hoạt động đầy đủ.</p>
+    <p class="en"><strong>Break-even point:</strong> The Ant Adventures needs to reach <strong>~$2,500 USD/month in revenue</strong> to cover operating costs post-investment. Break-even can be achieved from <strong>August–September 2026</strong> after website launch and full B2B pipeline activation.</p>
+  </div>
+</div>
+
+<!-- S16 -->
+<div class="section" id="s16">
+  <div class="sec-head"><div class="sec-num">16</div><div class="sec-title"><span class="vi">Cơ cấu cổ phần — Cap Table</span><span class="en">Equity Structure — Cap Table</span></div></div>
+  <div class="investor-hero" style="margin-bottom:1.5rem">
+    <div style="font-size:12px;opacity:.75;text-transform:uppercase;letter-spacing:.5px"><span class="vi">Pre-Money Valuation đề xuất</span><span class="en">Proposed Pre-Money Valuation</span></div>
+    <div class="inv-amount">15,000,000,000 VND</div>
+    <div class="inv-sub">~$600,000 USD</div>
+    <div class="inv-detail">
+      <div class="inv-item"><div class="inv-item-num">2–3B</div><div class="inv-item-label"><span class="vi">Đầu tư (VND)</span><span class="en">Investment (VND)</span></div></div>
+      <div class="inv-item"><div class="inv-item-num">17–18B</div><div class="inv-item-label">Post-Money (VND)</div></div>
+      <div class="inv-item"><div class="inv-item-num">12–15%</div><div class="inv-item-label"><span class="vi">Cổ phần Nhà đầu tư</span><span class="en">Investor Equity</span></div></div>
+      <div class="inv-item"><div class="inv-item-num">&gt;85%</div><div class="inv-item-label"><span class="vi">Quyền kiểm soát Founders</span><span class="en">Founders Control</span></div></div>
+    </div>
+  </div>
+  <div class="tbl-wrap" style="margin-bottom:1.5rem">
+    <table>
+      <thead><tr><th><span class="vi">Cổ đông</span><span class="en">Shareholder</span></th><th><span class="vi">Vốn góp (VND)</span><span class="en">Contribution (VND)</span></th><th><span class="vi">Tỷ lệ</span><span class="en">Share</span></th><th><span class="vi">Vai trò</span><span class="en">Role</span></th></tr></thead>
+      <tbody>
+        <tr><td><strong>Tai Pham</strong></td><td>600,000,000</td><td class="td-highlight">57.1%</td><td>Co-Founder · Head of Sales</td></tr>
+        <tr><td><strong>Phuc Vo</strong></td><td>450,000,000</td><td class="td-highlight">42.9%</td><td>Founder &amp; CEO</td></tr>
+        <tr style="background:var(--green-light)"><td><strong>TOTAL</strong></td><td class="td-highlight"><strong>1,050,000,000 VND</strong></td><td class="td-highlight"><strong>100%</strong></td><td><span class="vi">Vốn điều lệ đăng ký</span><span class="en">Registered charter capital</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <h3 style="font-size:.9rem;font-weight:700;color:var(--text-muted);margin-bottom:.85rem;text-transform:uppercase;letter-spacing:.5px"><span class="vi">Sau đầu tư — Kịch bản 2.5B VND</span><span class="en">Post-Investment — 2.5B VND Scenario</span></h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th><span class="vi">Cổ đông</span><span class="en">Shareholder</span></th><th><span class="vi">Trước</span><span class="en">Before</span></th><th><span class="vi">Sau</span><span class="en">After</span></th><th><span class="vi">Giá trị sở hữu</span><span class="en">Ownership Value</span></th></tr></thead>
+      <tbody>
+        <tr><td><strong>Tai Pham</strong></td><td>57.1%</td><td class="td-highlight">48.9%</td><td>~8.6B VND (~$338K)</td></tr>
+        <tr><td><strong>Phuc Vo</strong></td><td>42.9%</td><td class="td-highlight">36.8%</td><td>~6.4B VND (~$254K)</td></tr>
+        <tr><td><strong>Nhà đầu tư</strong></td><td>—</td><td class="td-highlight">14.3%</td><td>~2.5B VND (~$98K)</td></tr>
+        <tr style="background:var(--green-light)"><td><strong>TOTAL</strong></td><td><strong>100%</strong></td><td><strong>100%</strong></td><td class="td-highlight"><strong>~17.5B VND</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- S17 -->
+<div class="section" id="s17">
+  <div class="sec-head"><div class="sec-num">17</div><div class="sec-title"><span class="vi">Phân tích rủi ro &amp; Biện pháp giảm thiểu</span><span class="en">Risk Analysis &amp; Mitigation</span></div></div>
+  <div class="pending-item" style="border-left-color:var(--coral)">
+    <div class="pending-head"><div class="pending-title">⚠ R1 — <span class="vi">Tính mùa vụ (Seasonality)</span><span class="en">Seasonality</span></div><span class="status-pill" style="background:#FEF3C7;color:#B45309"><span class="vi">Trung bình</span><span class="en">Medium</span></span></div>
+    <div class="pending-desc">
+      <div class="vi"><strong>Rủi ro:</strong> High season (Oct–Apr) vs Low season (May–Sep). Doanh thu có thể thấp hơn 40–60% trong mùa thấp.<br><strong>Giảm thiểu:</strong> Thiết kế tour phù hợp mùa mưa · Tập trung South Vietnam &amp; Mekong vào mùa thấp điểm miền Bắc · Pipeline booking 3–6 tháng trước.</div>
+      <div class="en"><strong>Risk:</strong> High season (Oct–Apr) vs Low season (May–Sep). Revenue may be 40–60% lower in the low season.<br><strong>Mitigation:</strong> Design rainy-season tours · Focus South Vietnam &amp; Mekong during North's low season · Build 3–6 month advance booking pipeline.</div>
+    </div>
+    <div class="owner-line"><span class="vi">Chủ sở hữu:</span><span class="en">Owner:</span> <strong>Tai Pham</strong></div>
+  </div>
+  <div class="pending-item" style="border-left-color:var(--coral)">
+    <div class="pending-head"><div class="pending-title">🤝 R3 — <span class="vi">Phụ thuộc B2B (Agent Dependency)</span><span class="en">B2B Agent Dependency</span></div><span class="status-pill"><span class="vi">Cao — Năm 1</span><span class="en">High — Year 1</span></span></div>
+    <div class="pending-desc">
+      <div class="vi"><strong>Rủi ro:</strong> Năm 1–2, phần lớn bookings đến từ 3–4 đối tác B2B. Nếu một đối tác ngừng, doanh thu sụt giảm mạnh.<br><strong>Giảm thiểu:</strong> Không để agent nào chiếm &gt;35% tổng doanh thu · Đa dạng hóa kênh: direct + B2B local + B2B quốc tế · Xây direct booking pipeline từ website từ T7/2026.</div>
+      <div class="en"><strong>Risk:</strong> In Year 1–2, most bookings come from 3–4 B2B partners. If one partner stops, revenue drops significantly.<br><strong>Mitigation:</strong> No single agent exceeds 35% of revenue · Diversify channels: direct + local B2B + international B2B · Build direct booking pipeline from website from July 2026.</div>
+    </div>
+    <div class="owner-line"><span class="vi">Chủ sở hữu:</span><span class="en">Owner:</span> <strong>Tai Pham</strong></div>
+  </div>
+  <div class="pending-item" style="border-left-color:var(--coral)">
+    <div class="pending-head"><div class="pending-title">👤 R4 — <span class="vi">Rủi ro con người chủ chốt (Key Person Risk)</span><span class="en">Key Person Risk</span></div><span class="status-pill"><span class="vi">Cao</span><span class="en">High</span></span></div>
+    <div class="pending-desc">
+      <div class="vi"><strong>Rủi ro:</strong> The Ant Adventures trong Phase 1 phụ thuộc gần như hoàn toàn vào Phuc và Tai.<br><strong>Giảm thiểu:</strong> Mọi SOP và knowledge đều được document hóa · Hao và Tran được đào tạo xử lý operations cơ bản độc lập từ T8/2026 · Bảo hiểm nhân thọ cho cả hai founders sau khi nhận vốn.</div>
+      <div class="en"><strong>Risk:</strong> The Ant Adventures in Phase 1 is almost entirely dependent on Phuc and Tai.<br><strong>Mitigation:</strong> All SOPs and knowledge documented — nothing lives only in one person's head · Hao and Tran trained to handle basic operations independently from Aug 2026 · Life insurance for both founders post-investment.</div>
+    </div>
+    <div class="owner-line"><span class="vi">Chủ sở hữu:</span><span class="en">Owner:</span> <strong>Phuc Vo + Tai Pham</strong></div>
+  </div>
+  <div class="tbl-wrap" style="margin-top:1.25rem">
+    <table>
+      <thead><tr><th><span class="vi">Rủi ro</span><span class="en">Risk</span></th><th><span class="vi">Xác suất</span><span class="en">Probability</span></th><th><span class="vi">Ảnh hưởng</span><span class="en">Impact</span></th><th><span class="vi">Mức độ</span><span class="en">Level</span></th></tr></thead>
+      <tbody>
+        <tr><td>R3 — <span class="vi">B2B Dependency</span><span class="en">B2B Dependency</span></td><td><span class="vi">Cao</span><span class="en">High</span></td><td><span class="vi">Cao</span><span class="en">High</span></td><td class="td-coral"><strong>🔴 <span class="vi">Cao</span><span class="en">High</span></strong></td></tr>
+        <tr><td>R4 — <span class="vi">Key Person</span><span class="en">Key Person</span></td><td><span class="vi">Thấp</span><span class="en">Low</span></td><td><span class="vi">Rất cao</span><span class="en">Very high</span></td><td class="td-coral"><strong>🔴 <span class="vi">Cao</span><span class="en">High</span></strong></td></tr>
+        <tr><td>R1 — Seasonality</td><td><span class="vi">Cao</span><span class="en">High</span></td><td><span class="vi">Trung bình</span><span class="en">Medium</span></td><td style="color:#B45309;font-weight:600">🟡 <span class="vi">Trung bình</span><span class="en">Medium</span></td></tr>
+        <tr><td>R2 — Currency</td><td><span class="vi">Trung bình</span><span class="en">Medium</span></td><td><span class="vi">Thấp</span><span class="en">Low</span></td><td class="td-pos">🟢 <span class="vi">Thấp</span><span class="en">Low</span></td></tr>
+        <tr><td>R7 — <span class="vi">Economic Downturn</span><span class="en">Economic Downturn</span></td><td><span class="vi">Thấp</span><span class="en">Low</span></td><td><span class="vi">Trung bình</span><span class="en">Medium</span></td><td class="td-pos">🟢 <span class="vi">Thấp</span><span class="en">Low</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- S18 -->
+<div class="section" id="s18">
+  <div class="sec-head"><div class="sec-num">18</div><div class="sec-title"><span class="vi">Kế hoạch Marketing &amp; Sales — 2026</span><span class="en">Marketing &amp; Sales Plan — 2026</span></div></div>
+  <div class="highlight" style="margin-bottom:1.5rem">
+    <p class="vi">Marketing của The Ant Adventures không dựa vào ngân sách quảng cáo lớn — mà dựa vào <strong>trust, story và relationship</strong>. UHNW clients không book tour từ Google Ads — họ book từ lời giới thiệu của người họ tin tưởng.</p>
+    <p class="en">The Ant Adventures' marketing is not driven by large ad budgets — it is driven by <strong>trust, story and relationship</strong>. UHNW clients don't book tours from Google Ads — they book from the recommendation of someone they trust.</p>
+  </div>
+  <div class="tbl-wrap" style="margin-bottom:1.5rem">
+    <table>
+      <thead><tr><th><span class="vi">Giai đoạn</span><span class="en">Stage</span></th><th><span class="vi">Kênh</span><span class="en">Channel</span></th><th><span class="vi">Hành động</span><span class="en">Action</span></th><th><span class="vi">Mục tiêu 2026</span><span class="en">2026 Target</span></th></tr></thead>
+      <tbody>
+        <tr><td><strong>🎯 <span class="vi">Awareness</span><span class="en">Awareness</span></strong></td><td>Website · Instagram · Geek UP</td><td><span class="vi">Khách biết đến The Ant Adventures qua content, community, word-of-mouth</span><span class="en">Guests discover The Ant Adventures via content, community, word-of-mouth</span></td><td><span class="vi">500+ visitors/tháng (từ T8)</span><span class="en">500+ visitors/month (from Aug)</span></td></tr>
+        <tr><td><strong>💬 Inquiry</strong></td><td>Email · WhatsApp · Instagram DM</td><td><span class="vi">Khách liên hệ — Tai phản hồi trong 2 giờ</span><span class="en">Guest enquires — Tai responds within 2 hours</span></td><td><span class="vi">15–20 inquiries/tháng (từ T9)</span><span class="en">15–20 inquiries/month (from Sep)</span></td></tr>
+        <tr><td><strong>📋 Proposal</strong></td><td>Email · PDF itinerary · Quote</td><td><span class="vi">Tai gửi custom itinerary + pricing trong 24–48h</span><span class="en">Tai sends custom itinerary + pricing within 24–48h</span></td><td><span class="vi">Conversion inquiry→proposal: 80%</span><span class="en">Conversion inquiry→proposal: 80%</span></td></tr>
+        <tr><td><strong>🤝 Closing</strong></td><td>Call · Email · <span class="vi">Phuc gặp trực tiếp</span><span class="en">Phuc meets in person</span></td><td><span class="vi">Follow up 3–5 ngày. Phuc gặp tại Saigon nếu cần.</span><span class="en">Follow up 3–5 days. Phuc meets in Saigon if needed.</span></td><td><span class="vi">Conversion proposal→booking: 30–40%</span><span class="en">Conversion proposal→booking: 30–40%</span></td></tr>
+        <tr><td><strong>✅ Confirmed</strong></td><td>Invoice · Deposit · CRM</td><td><span class="vi">Nhận 30–50% deposit, vào CRM, ops bắt đầu</span><span class="en">Receive 30–50% deposit, enter CRM, ops begin</span></td><td><span class="vi">20–30 confirmed bookings Năm 1</span><span class="en">20–30 confirmed bookings Year 1</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="highlight coral">
+    <p class="vi"><strong>🎯 Mục tiêu cụ thể: 10 confirmed bookings trước 31/12/2026</strong><br><br>
+    Từ B2B local (Charu + Make Your Asia + Adi): <strong>4–5 bookings</strong><br>
+    Từ Ms. Ngoc (Úc): <strong>2–3 bookings</strong><br>
+    Từ website + direct inquiry: <strong>2–3 bookings</strong><br>
+    Andrew McFarland (deposit đã nhận): <strong>1 booking confirmed Dec 2026</strong><br><br>
+    Tổng: <strong>10–12 bookings · $30,000–$50,000 doanh thu</strong></p>
+    <p class="en"><strong>🎯 Specific Target: 10 confirmed bookings before 31/12/2026</strong><br><br>
+    From local B2B (Charu + Make Your Asia + Adi): <strong>4–5 bookings</strong><br>
+    From Ms. Ngoc (Australia): <strong>2–3 bookings</strong><br>
+    From website + direct inquiry: <strong>2–3 bookings</strong><br>
+    Andrew McFarland (deposit received): <strong>1 booking confirmed Dec 2026</strong><br><br>
+    Total: <strong>10–12 bookings · $30,000–$50,000 revenue</strong></p>
+  </div>
+</div>
+
+
+<!-- S19 -->
+<div class="section" id="s19">
+  <div class="sec-head">
+    <div class="sec-num">19</div>
+    <div class="sec-title">
+      <span class="vi">Kế Hoạch Ra Mắt Website &amp; Chuyến Kiểm Tra — Tháng 7/2026</span>
+      <span class="en">Website Launch &amp; Inspection Trip Plan — July 2026</span>
+    </div>
+  </div>
+
+  <div class="callout">
+    <span class="vi"><strong>Chiến lược cốt lõi:</strong> Chuyến kiểm tra 13–25/7 cũng đồng thời là chuyến quay nội dung — một chuyến đi, bốn sứ mệnh (chụp ảnh, đàm phán nhà cung cấp, kiểm tra sản phẩm, đánh giá Quy Nhơn). Website phải <strong>hoàn thiện cấu trúc với ảnh nhà cung cấp trước ngày 12/7</strong>, sau đó cập nhật ảnh thực tế vào cuối tháng 7 để ra mắt chính thức.</span>
+    <span class="en"><strong>The key insight:</strong> Your July 13–25 inspection trip is also your content shoot — one trip, four missions (photography, supplier negotiation, product validation, Quy Nhon evaluation). The website must be <strong>structurally complete with supplier images by July 12</strong>, then upgraded with your authentic photography in the final days of July for the true launch.</span>
+  </div>
+
+  <!-- 19a: Phase Timeline -->
+  <div class="subsec-head">
+    <div class="subsec-num">a</div>
+    <div class="subsec-title"><span class="vi">Lộ Trình — Ba Giai Đoạn Đến Ra Mắt</span><span class="en">Timeline — Three Phases to Launch</span></div>
+  </div>
+  <div class="timeline">
+    <div class="phase-card p1">
+      <div class="phase-label"><span class="vi">Giai Đoạn 1</span><span class="en">Phase 1</span></div>
+      <div class="phase-title"><span class="vi">Xây Dựng &amp; Chuẩn Bị</span><span class="en">Build &amp; Prepare</span></div>
+      <div class="phase-dates">22/5 → 12/7/2026</div>
+      <ul>
+        <li><span class="vi">Viết nội dung 5+ Hành Trình Đặc Trưng</span><span class="en">Write all 5+ Signature Journey content</span></li>
+        <li><span class="vi">Yêu cầu ảnh từ nhà cung cấp (khách sạn 4–5★)</span><span class="en">Request supplier images (4–5★ hotels)</span></li>
+        <li><span class="vi">Xây dựng cấu trúc CMS Webflow</span><span class="en">Build Webflow CMS structure</span></li>
+        <li><span class="vi">Cài đặt Mailchimp — 2 danh sách + 2 mẫu</span><span class="en">Set up Mailchimp — 2 lists + 2 templates</span></li>
+        <li><span class="vi">Tải ảnh nhà cung cấp làm ảnh tạm</span><span class="en">Upload supplier hero images as placeholders</span></li>
+        <li><span class="vi">Website đạt 90% (xem xét nội bộ)</span><span class="en">Site is 90% live (internal review only)</span></li>
+        <li><span class="vi">Chuẩn bị danh sách chụp cho chuyến kiểm tra</span><span class="en">Prepare shot list per destination</span></li>
+      </ul>
+    </div>
+    <div class="phase-card p2">
+      <div class="phase-label"><span class="vi">Giai Đoạn 2</span><span class="en">Phase 2</span></div>
+      <div class="phase-title"><span class="vi">Kiểm Tra &amp; Chụp Hình</span><span class="en">Inspect + Shoot</span></div>
+      <div class="phase-dates">13–25/7/2026</div>
+      <ul>
+        <li><span class="vi">Thực hiện danh sách chụp tại mỗi điểm đến</span><span class="en">Execute shot list at every destination</span></li>
+        <li><span class="vi">Gặp GM khách sạn 4–5★, đàm phán giá NET</span><span class="en">Meet 4–5★ hotel GMs, negotiate rates</span></li>
+        <li><span class="vi">Kiểm tra sản phẩm theo tiêu chuẩn thương hiệu</span><span class="en">Validate all products against brand standard</span></li>
+        <li><span class="vi">Đánh giá Quy Nhơn như điểm đến đặc trưng</span><span class="en">Evaluate Quy Nhon as signature destination</span></li>
+        <li><span class="vi">Chụp ảnh thực về ẩm thực, văn hóa, phương tiện</span><span class="en">Shoot authentic food, culture, transport moments</span></li>
+        <li><span class="vi">Thu thập bảng giá &amp; thỏa thuận nhà cung cấp</span><span class="en">Collect supplier rate sheets &amp; agreements</span></li>
+      </ul>
+    </div>
+    <div class="phase-card p3">
+      <div class="phase-label"><span class="vi">Giai Đoạn 3</span><span class="en">Phase 3</span></div>
+      <div class="phase-title"><span class="vi">Tải Lên &amp; Ra Mắt</span><span class="en">Upload &amp; Go Live</span></div>
+      <div class="phase-dates">26–31/7/2026</div>
+      <ul>
+        <li><span class="vi">Chọn lọc &amp; chỉnh sửa 50–80 ảnh tốt nhất</span><span class="en">Cull &amp; edit best 50–80 photos from trip</span></li>
+        <li><span class="vi">Thay thế ảnh tạm trong Webflow</span><span class="en">Replace placeholder images in Webflow</span></li>
+        <li><span class="vi">Kiểm tra lần cuối tất cả trang Hành Trình</span><span class="en">Final QA across all Signature Journey pages</span></li>
+        <li><span class="vi">Xuất bản website chính thức</span><span class="en">Publish website live</span></li>
+        <li><span class="vi">Gửi bản tin B2B đầu tiên (thông báo đại lý)</span><span class="en">Send first B2B newsletter (agent announcement)</span></li>
+        <li><span class="vi">Gửi bản tin khách hàng đầu tiên (chào mừng)</span><span class="en">Send first client newsletter (launch welcome)</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 19b: Images & Webflow -->
+  <div class="subsec-head">
+    <div class="subsec-num">b</div>
+    <div class="subsec-title"><span class="vi">Nhóm Việc 1 — Hình Ảnh &amp; Tải Lên Webflow</span><span class="en">Workstream 1 — Images &amp; Webflow Upload</span></div>
+  </div>
+  <div class="webflow-specs">
+    <div class="spec-card">
+      <div class="spec-icon">🖼️</div>
+      <div class="spec-value">1920×1080</div>
+      <div class="spec-label"><span class="vi">Ảnh banner hero toàn màn hình</span><span class="en">Hero banners (landscape full-width)</span></div>
+    </div>
+    <div class="spec-card">
+      <div class="spec-icon">📷</div>
+      <div class="spec-value">420×280</div>
+      <div class="spec-label"><span class="vi">Thẻ hành trình &amp; lưới gallery</span><span class="en">Journey cards &amp; gallery tiles</span></div>
+    </div>
+    <div class="spec-card">
+      <div class="spec-icon">⚖️</div>
+      <div class="spec-value">&lt;500KB</div>
+      <div class="spec-label"><span class="vi">Dung lượng tối đa mỗi ảnh (sau nén)</span><span class="en">Max file size per image (compressed)</span></div>
+    </div>
+    <div class="spec-card">
+      <div class="spec-icon">🏷️</div>
+      <div class="spec-value">SEO Alt</div>
+      <div class="spec-label"><span class="vi">Mỗi ảnh cần có alt text mô tả</span><span class="en">Every image needs descriptive alt text</span></div>
+    </div>
+  </div>
+  <div class="callout gold">
+    <span class="vi"><strong>Quy ước đặt tên file (SEO Webflow):</strong> Dùng định dạng chữ thường-gạch ngang: <code>ant-adventures-hoi-an-lantern-festival-evening.jpg</code> · Không bao giờ tải file tên <code>IMG_3847.jpg</code> — Google đọc tên file như tín hiệu SEO.</span>
+    <span class="en"><strong>File naming convention (Webflow SEO):</strong> Use lowercase-hyphen format: <code>ant-adventures-hoi-an-lantern-festival-evening.jpg</code> · Never upload files named <code>IMG_3847.jpg</code> — Google reads file names as SEO signals.</span>
+  </div>
+  <div class="workstreams">
+    <div class="ws-card">
+      <div class="ws-header">
+        <div class="ws-icon">🏗️</div>
+        <div class="ws-title"><span class="vi">Trước Chuyến Đi (Giai Đoạn 1)</span><span class="en">Before the Trip (Phase 1)</span></div>
+        <div class="ws-sub"><span class="vi">Lấy ảnh nhà cung cấp · xây cấu trúc website</span><span class="en">Source supplier images · build site structure</span></div>
+      </div>
+      <div class="ws-body">
+        <div class="task-item"><div class="check"></div><div class="task-text"><span class="vi">Email tất cả đối tác 4–5★ yêu cầu ảnh hi-res (khách sạn, phòng, F&amp;B, trải nghiệm)</span><span class="en">Email all 4–5★ partners requesting hi-res images (hotel, rooms, F&amp;B, experiences)</span> <span class="due urgent"><span class="vi">Trước 7/6</span><span class="en">By June 7</span></span></div></div>
+        <div class="task-item"><div class="check"></div><div class="task-text"><span class="vi">Thiết lập Webflow CMS Collections: Hành Trình, Điểm Đến, Blog/Tin tức</span><span class="en">Set up Webflow CMS Collections: Journeys, Destinations, Blog/News</span> <span class="due"><span class="vi">Trước 14/6</span><span class="en">By June 14</span></span></div></div>
+        <div class="task-item"><div class="check"></div><div class="task-text"><span class="vi">Tạo trường ảnh Webflow: Hero (1920×1080), Card (420×280), Gallery (4:3)</span><span class="en">Create Webflow image fields: Hero (1920×1080), Card (420×280), Gallery (4:3)</span> <span class="due"><span class="vi">Trước 14/6</span><span class="en">By June 14</span></span></div></div>
+        <div class="task-item"><div class="check"></div><div class="task-text"><span class="vi">Tải ảnh nhà cung cấp tạm theo từng điểm đến — không watermark</span><span class="en">Upload supplier placeholder images per destination — no watermarks</span> <span class="due"><span class="vi">Trước 1/7</span><span class="en">By July 1</span></span></div></div>
+        <div class="task-item"><div class="check"></div><div class="task-text"><span class="vi">Viết SEO alt text cho mỗi ảnh tạm theo quy ước đặt tên</span><span class="en">Write SEO alt text for every placeholder image using the naming convention</span> <span class="due"><span class="vi">Trước 5/7</span><span class="en">By July 5</span></span></div></div>
+        <div class="task-item"><div class="check"></div><div class="task-text"><span class="vi">Xây dựng tài liệu danh sách chụp cho chuyến kiểm tra</span><span class="en">Build full shot list document for the inspection trip</span> <span class="due"><span class="vi">Trước 10/7</span><span class="en">By July 10</span></span></div></div>
+      </div>
+    </div>
+    <div class="ws-card">
+      <div class="ws-header">
+        <div class="ws-icon">🚀</div>
+        <div class="ws-title"><span class="vi">Sau Chuyến Đi (Giai Đoạn 3)</span><span class="en">After the Trip (Phase 3)</span></div>
+        <div class="ws-sub"><span class="vi">Thay bằng ảnh thực tế The Ant Adventures</span><span class="en">Replace with authentic Ant Adventures photography</span></div>
+      </div>
+      <div class="ws-body">
+        <div class="task-item"><div class="check"></div><div class="task-text"><span class="vi">Chọn lọc ảnh — top 10 mỗi điểm đến (50–80 tổng)</span><span class="en">Cull trip photos — select top 10 per destination (50–80 total)</span> <span class="due">26–27/7</span></div></div>
+        <div class="task-item"><div class="check"></div><div class="task-text"><span class="vi">Chỉnh sửa: tăng tương phản, ánh sáng, tông màu nhất quán thương hiệu</span><span class="en">Edit photos: enhance contrast, adjust exposure, brand-consistent tone</span> <span class="due">26–27/7</span></div></div>
+        <div class="task-item"><div class="check"></div><div class="task-text"><span class="vi">Thay đổi kích thước &amp; nén: hero (1920×1080), card (420×280), &lt;500KB</span><span class="en">Resize &amp; compress: hero (1920×1080), cards (420×280), &lt;500KB</span> <span class="due">27–28/7</span></div></div>
+        <div class="task-item"><div class="check"></div><div class="task-text"><span class="vi">Đổi tên file theo quy ước SEO trước khi tải lên</span><span class="en">Rename all files using SEO convention before uploading</span> <span class="due">27–28/7</span></div></div>
+        <div class="task-item"><div class="check"></div><div class="task-text"><span class="vi">Thay ảnh tạm trong Webflow — hero trước, card, gallery sau</span><span class="en">Replace placeholder images in Webflow — hero first, then cards, gallery last</span> <span class="due">28–29/7</span></div></div>
+        <div class="task-item"><div class="check"></div><div class="task-text"><span class="vi">Kiểm tra trực quan lần cuối trên desktop + mobile trước khi xuất bản</span><span class="en">Final visual QA: check every page on desktop + mobile before publish</span> <span class="due">30/7</span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 19c: Signature Journeys -->
+  <div class="subsec-head">
+    <div class="subsec-num">c</div>
+    <div class="subsec-title"><span class="vi">Nhóm Việc 2 — Hành Trình Đặc Trưng (5+ Sản Phẩm)</span><span class="en">Workstream 2 — Signature Journeys (5+ Products)</span></div>
+  </div>
+  <div class="callout">
+    <span class="vi">Mỗi trang Hành Trình trên Webflow cần: <strong>Tên + Tagline · Ảnh Hero · "Điều Gì Làm Nên Hành Trình Này" (3 điểm) · Điểm nổi bật từng ngày · Nổi bật chỗ ở · Giá Từ (mỗi người) · Nút Đặt Ngay.</strong></span>
+    <span class="en">Each Signature Journey page in Webflow needs: <strong>Journey Name + Tagline · Hero Image · "What Makes This Journey" (3 bullets) · Day-by-day highlights · Accommodation highlights · Price From (per pax) · Enquire Now CTA.</strong></span>
+  </div>
+  <div class="journeys-grid">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th><span class="vi">Tên Hành Trình</span><span class="en">Journey Name</span></th>
+          <th><span class="vi">Vùng</span><span class="en">Region</span></th>
+          <th><span class="vi">Ngày</span><span class="en">Days</span></th>
+          <th><span class="vi">Điểm Đến</span><span class="en">Destinations</span></th>
+          <th><span class="vi">Ưu Tiên Chụp</span><span class="en">Photo Priority</span></th>
+          <th><span class="vi">Trạng Thái</span><span class="en">Status</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td><span class="journey-name"><span class="vi">Miền Bắc Cổ Kính</span><span class="en">The Ancient North</span></span><span class="journey-sub">Hà Nội · Ninh Bình · Hạ Long</span></td>
+          <td><span class="region-tag north"><span class="vi">Bắc</span><span class="en">North</span></span></td>
+          <td>8</td>
+          <td>Hanoi, Ninh Binh, Ha Long</td>
+          <td>🔥 <span class="vi">Cao</span><span class="en">High</span></td>
+          <td><span class="status-dot todo"><span class="vi">Cần Viết</span><span class="en">To Write</span></span></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td><span class="journey-name"><span class="vi">Rìa Của Việt Nam</span><span class="en">The Edge of Vietnam</span></span><span class="journey-sub"><span class="vi">Vòng Lặp Hà Giang · Miền Bắc Xa Xôi</span><span class="en">Ha Giang Loop · Remote North</span></span></td>
+          <td><span class="region-tag north"><span class="vi">Bắc</span><span class="en">North</span></span></td>
+          <td>10</td>
+          <td>Hanoi, Ha Giang, Dong Van</td>
+          <td>🔥 <span class="vi">Cao</span><span class="en">High</span></td>
+          <td><span class="status-dot todo"><span class="vi">Cần Viết</span><span class="en">To Write</span></span></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td><span class="journey-name"><span class="vi">Linh Hồn Việt Nam</span><span class="en">The Soul of Vietnam</span></span><span class="journey-sub">Phong Nha · Huế · Hội An</span></td>
+          <td><span class="region-tag central"><span class="vi">Trung</span><span class="en">Central</span></span></td>
+          <td>9</td>
+          <td>Phong Nha, Hue, Hoi An</td>
+          <td>🔥 <span class="vi">Cao</span><span class="en">High</span></td>
+          <td><span class="status-dot todo"><span class="vi">Cần Viết</span><span class="en">To Write</span></span></td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td><span class="journey-name"><span class="vi">Sài Gòn &amp; Đồng Bằng</span><span class="en">Saigon &amp; The Delta</span></span><span class="journey-sub">TP.HCM · Mekong</span></td>
+          <td><span class="region-tag south"><span class="vi">Nam</span><span class="en">South</span></span></td>
+          <td>6</td>
+          <td>HCMC, Cu Chi, Mekong, Can Tho</td>
+          <td><span class="vi">Trung bình</span><span class="en">Medium</span></td>
+          <td><span class="status-dot todo"><span class="vi">Cần Viết</span><span class="en">To Write</span></span></td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td><span class="journey-name"><span class="vi">Việt Nam Trọn Vẹn</span><span class="en">Vietnam in Full</span></span><span class="journey-sub"><span class="vi">Hành Trình Grand · 3 Miền</span><span class="en">The Grand Journey · All Regions</span></span></td>
+          <td><span class="region-tag multi"><span class="vi">Tất cả</span><span class="en">Multi</span></span></td>
+          <td>14</td>
+          <td><span class="vi">Hà Nội → Miền Trung → Sài Gòn</span><span class="en">Hanoi → Central → Saigon</span></td>
+          <td>🔥 <span class="vi">Cao</span><span class="en">High</span></td>
+          <td><span class="status-dot todo"><span class="vi">Cần Viết</span><span class="en">To Write</span></span></td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td><span class="journey-name"><span class="vi">Quy Nhơn Ẩn Giấu</span><span class="en">Quy Nhon Undiscovered</span></span><span class="journey-sub"><span class="vi">Bí Mật Đẹp Nhất Của Việt Nam</span><span class="en">Vietnam's Best-Kept Secret</span></span></td>
+          <td><span class="region-tag central"><span class="vi">Trung</span><span class="en">Central</span></span></td>
+          <td>5</td>
+          <td>Quy Nhon, Ham Ho, Ky Co</td>
+          <td>🔥 <span class="vi">Chụp 23–25/7</span><span class="en">Shoot Jul 23–25</span></td>
+          <td><span class="status-dot post-trip"><span class="vi">Sau Chuyến Đi</span><span class="en">Post-Trip Only</span></span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="callout coral">
+    <span class="vi"><strong>Thứ tự viết:</strong> Bắt đầu với Hành Trình #5 (Việt Nam Trọn Vẹn) — đây là sản phẩm chính, dài nhất, giá trị cao nhất. Các hành trình #1–4 theo sau. Hành Trình #6 (Quy Nhơn) viết SAU chuyến kiểm tra — không xuất bản nếu chưa có ảnh riêng.</span>
+    <span class="en"><strong>Writing order:</strong> Start with Journey #5 (Vietnam in Full) — it's your flagship, longest, highest-value. Journeys #1–4 follow. Journey #6 (Quy Nhon) is written AFTER the inspection trip — do not publish it without your own photos.</span>
+  </div>
+
+  <!-- 19d: Newsletters -->
+  <div class="subsec-head">
+    <div class="subsec-num">d</div>
+    <div class="subsec-title"><span class="vi">Nhóm Việc 3 — Bản Tin (Hai Kênh)</span><span class="en">Workstream 3 — Newsletters (Two Tracks)</span></div>
+  </div>
+  <div class="newsletter-grid">
+    <div class="nl-card b2b">
+      <div class="nl-header">
+        <div class="nl-title">📬 The Ant Insider</div>
+        <div class="nl-audience"><span class="vi">Kênh B2B · Đối Tác Thương Mại Du Lịch</span><span class="en">B2B Track · Travel Trade Partners</span></div>
+      </div>
+      <div class="nl-body">
+        <div class="nl-row"><div class="nl-label"><span class="vi">Đối tượng</span><span class="en">Audience</span></div><div class="nl-value"><span class="vi">Công ty tour, đại lý, đối tác Virtuoso, B2B tiềm năng</span><span class="en">Tour operators, travel agents, Virtuoso-tier partners, B2B prospects</span></div></div>
+        <div class="nl-row"><div class="nl-label"><span class="vi">Tần suất</span><span class="en">Frequency</span></div><div class="nl-value"><span class="vi">Hàng tháng (Q3 2026), sau đó 2 tháng/lần từ Năm 2</span><span class="en">Monthly (launch Q3 2026), then bi-monthly from Year 2</span></div></div>
+        <div class="nl-row"><div class="nl-label"><span class="vi">Số đầu</span><span class="en">1st Issue</span></div><div class="nl-value"><span class="vi">Cuối tháng 7/2026 — "Giới Thiệu The Ant Adventures"</span><span class="en">Late July 2026 — "Introducing The Ant Adventures"</span></div></div>
+        <div class="nl-row"><div class="nl-label"><span class="vi">Nội dung</span><span class="en">Content</span></div><div class="nl-value"><span class="vi">Sản phẩm mới · Hoa hồng · Điểm nổi bật chuyến kiểm tra · Mời FAM trip 2027</span><span class="en">New products · Commission structure · Inspection highlights · FAM trip invite 2027</span></div></div>
+        <div class="nl-row"><div class="nl-label"><span class="vi">Nền tảng</span><span class="en">Platform</span></div><div class="nl-value">Mailchimp — list "Trade Partners"</div></div>
+        <div class="nl-row"><div class="nl-label"><span class="vi">Xây list</span><span class="en">List Building</span></div><div class="nl-value">Make Your Asia · Charu Tours · Adi Long Xuyen · <span class="vi">Form đại lý trên website</span><span class="en">Agent enquiry form on website</span></div></div>
+        <div class="nl-row"><div class="nl-label"><span class="vi">Giọng điệu</span><span class="en">Tone</span></div><div class="nl-value"><span class="vi">Chuyên nghiệp, thương mại, số liệu + giá. Ít kể chuyện, nhiều thông tin kinh doanh.</span><span class="en">Professional, trade-focused, facts + rates. Less storytelling, more intel.</span></div></div>
+      </div>
+    </div>
+    <div class="nl-card consumer">
+      <div class="nl-header">
+        <div class="nl-title">🐜 The Ant Chronicles</div>
+        <div class="nl-audience"><span class="vi">Kênh Khách Hàng · Khách UHNW Trực Tiếp</span><span class="en">Direct Client Track · UHNW Travellers</span></div>
+      </div>
+      <div class="nl-body">
+        <div class="nl-row"><div class="nl-label"><span class="vi">Đối tượng</span><span class="en">Audience</span></div><div class="nl-value"><span class="vi">Khách đã hỏi, khách trực tiếp, giới thiệu, cộng đồng expat Charu</span><span class="en">Past enquiries, direct clients, referrals, Charu expat community</span></div></div>
+        <div class="nl-row"><div class="nl-label"><span class="vi">Tần suất</span><span class="en">Frequency</span></div><div class="nl-value"><span class="vi">2 tháng/lần — chất lượng hơn số lượng</span><span class="en">Bi-monthly (every 2 months) — quality over quantity</span></div></div>
+        <div class="nl-row"><div class="nl-label"><span class="vi">Số đầu</span><span class="en">1st Issue</span></div><div class="nl-value"><span class="vi">Cuối tháng 7/2026 — "Việt Nam, Ngoài Bản Đồ: Câu Chuyện Sáng Lập"</span><span class="en">Late July 2026 — "Vietnam, Off the Map: Our Founding Story"</span></div></div>
+        <div class="nl-row"><div class="nl-label"><span class="vi">Nội dung</span><span class="en">Content</span></div><div class="nl-value"><span class="vi">Một câu chuyện hành trình · Một điểm đến sâu · Một mẹo địa phương · Một ưu đãi mùa</span><span class="en">One journey story · One destination deep dive · One local insider tip · One seasonal offer</span></div></div>
+        <div class="nl-row"><div class="nl-label"><span class="vi">Nền tảng</span><span class="en">Platform</span></div><div class="nl-value">Mailchimp — list "Direct Clients"</div></div>
+        <div class="nl-row"><div class="nl-label"><span class="vi">Xây list</span><span class="en">List Building</span></div><div class="nl-value"><span class="vi">Form website · Mạng expat Charu · Đầu mối Phúc · Khách hàng Tài</span><span class="en">Website enquiry form · Charu expat network · Phuc's contacts · Tai's sales leads</span></div></div>
+        <div class="nl-row"><div class="nl-label"><span class="vi">Giọng điệu</span><span class="en">Tone</span></div><div class="nl-value"><span class="vi">Ấm áp, văn học, cá nhân. Viết theo giọng Phúc &amp; Tài. Xa xỉ yên lặng, không phô trương.</span><span class="en">Warm, literary, personal. Written in Phuc &amp; Tai's voice. Quiet luxury, not flashy.</span></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="callout">
+    <span class="vi"><strong>Nhiệm vụ thiết lập Mailchimp (trước 12/7):</strong> (1) Tạo tài khoản, thiết lập 2 danh sách. (2) Xây mẫu HTML có thương hiệu — header xanh, accent đỏ san hô. (3) Thêm form đăng ký vào Webflow. (4) Viết cả hai số đầu tiên trước chuyến đi để sẵn sàng gửi ngay khi website ra mắt.</span>
+    <span class="en"><strong>Newsletter setup tasks (do before July 12):</strong> (1) Create Mailchimp account, set up 2 audience lists. (2) Build branded HTML template for each — green header, coral accent. (3) Add subscribe forms to Webflow. (4) Write both first-issue drafts before the trip so they're ready to send the moment the site goes live.</span>
+  </div>
+
+  <!-- 19e: Shot List -->
+  <div class="subsec-head">
+    <div class="subsec-num">e</div>
+    <div class="subsec-title"><span class="vi">Chuyến Kiểm Tra — Danh Sách Chụp Theo Điểm Đến</span><span class="en">Inspection Trip — Shot List by Destination</span></div>
+  </div>
+  <div class="callout gold">
+    <span class="vi"><strong>Hướng dẫn chụp ảnh cho Tài &amp; Phúc:</strong> Cần <strong>3 loại ảnh mỗi điểm đến</strong> — (1) <strong style="color:#2952a3">HERO</strong>: cảnh rộng cho banner website. (2) <strong style="color:#E8472A">EXPERIENCE</strong>: khoảnh khắc con người. (3) <strong style="color:#C9973A">FOOD/CULTURE</strong>: món ăn, chợ, nghi lễ, kết cấu. Chụp vào <strong>giờ vàng</strong> (6–8 sáng, 5–7 chiều). Tránh nắng gay gắt buổi trưa.</span>
+    <span class="en"><strong>Photography brief for Tai &amp; Phuc:</strong> You need <strong>3 types of shots per destination</strong> — (1) <strong style="color:#2952a3">HERO</strong>: wide landscape for the website banner. (2) <strong style="color:#E8472A">EXPERIENCE</strong>: human moment — you, a local, an activity. (3) <strong style="color:#C9973A">FOOD/CULTURE</strong>: dish, market, ritual, texture. Shoot in <strong>golden hour</strong> (6–8am, 5–7pm). Avoid midday harsh light.</span>
+  </div>
+  <div class="shot-list">
+    <table>
+      <thead>
+        <tr>
+          <th><span class="vi">Điểm Đến</span><span class="en">Destination</span></th>
+          <th><span class="vi">Ngày</span><span class="en">Days</span></th>
+          <th><span class="vi">Ảnh Phải Có</span><span class="en">Must-Get Shots</span></th>
+          <th><span class="vi">Cho HT#</span><span class="en">Journey #</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="dest"><span class="vi">Hà Nội</span><span class="en">Hanoi</span></td>
+          <td>D1–3</td>
+          <td class="shots">
+            <span class="shot-tag hero">HERO</span> <span class="vi">Hồ Hoàn Kiếm lúc bình minh, phố cổ nhìn từ trên cao</span><span class="en">Hoan Kiem Lake at dawn, Old Quarter alley from above</span><br>
+            <span class="shot-tag exp">EXP</span> <span class="vi">Đạp xe Bát Tràng, tay dệt lụa, làng hương thắp nén</span><span class="en">Bat Trang cycling, silk weaving hands, incense village sticks</span><br>
+            <span class="shot-tag food">FOOD</span> <span class="vi">Khói bún chả, cà phê trứng cận cảnh, góc bia hơi</span><span class="en">Bun cha smoke, egg coffee cup close-up, bia hoi corner</span>
+          </td>
+          <td>1, 5</td>
+        </tr>
+        <tr>
+          <td class="dest"><span class="vi">Ninh Bình</span><span class="en">Ninh Binh</span></td>
+          <td>D4–5</td>
+          <td class="shots">
+            <span class="shot-tag hero">HERO</span> <span class="vi">Tràng An từ mặt nước — karst &amp; phản chiếu thuyền</span><span class="en">Trang An from the water — karst &amp; boat reflection</span><br>
+            <span class="shot-tag exp">EXP</span> <span class="vi">Ngồi thuyền nhìn từ sau, cầu thang chùa Bích Động</span><span class="en">Rowing boat from behind, Bich Dong pagoda entrance stairs</span><br>
+            <span class="shot-tag food">FOOD</span> <span class="vi">Cơm dê, buổi sáng chợ địa phương</span><span class="en">Goat rice (com de), local market morning vendors</span>
+          </td>
+          <td>1, 5</td>
+        </tr>
+        <tr>
+          <td class="dest">Phong Nha</td>
+          <td>D6–7</td>
+          <td class="shots">
+            <span class="shot-tag hero">HERO</span> <span class="vi">Nội thất Hang Thiên Đường — nhũ đá được chiếu sáng, góc rộng</span><span class="en">Paradise Cave interior — stalactites lit, wide angle</span><br>
+            <span class="shot-tag exp">EXP</span> <span class="vi">Đạp xe qua đồng ruộng, kayak sông Son, cửa hang lúc hoàng hôn</span><span class="en">Cycling through farmland, Son River kayak, cave entrance at dusk</span><br>
+            <span class="shot-tag food">FOOD</span> <span class="vi">Bàn ăn farmstay, cơm hến, vườn bia địa phương</span><span class="en">Farmstay table spread, com hep mussel rice, local beer garden</span>
+          </td>
+          <td>3, 5</td>
+        </tr>
+        <tr>
+          <td class="dest"><span class="vi">Huế &amp; DMZ</span><span class="en">Hue incl. DMZ</span></td>
+          <td>D8</td>
+          <td class="shots">
+            <span class="shot-tag hero">HERO</span> <span class="vi">Cổng Kinh Thành với hào nước lúc bình minh, thuyền rồng sông Hương</span><span class="en">Citadel gate with moat at sunrise, Perfume River dragon boat</span><br>
+            <span class="shot-tag exp">EXP</span> <span class="vi">Khám phá lăng tẩm, làng làm hương, chùa Thiên Mụ</span><span class="en">Royal tomb exploration, incense-making village, Thien Mu pagoda</span><br>
+            <span class="shot-tag food">FOOD</span> <span class="vi">Cơm Huế hoàng gia, bánh mì Huế, quầy chợ đêm</span><span class="en">Royal Hue cuisine set, banh mi Hue, night market stalls</span>
+          </td>
+          <td>3, 5</td>
+        </tr>
+        <tr>
+          <td class="dest"><span class="vi">Đèo Hải Vân → Hội An</span><span class="en">Hai Van → Hoi An</span></td>
+          <td>D9</td>
+          <td class="shots">
+            <span class="shot-tag hero">HERO</span> <span class="vi">Toàn cảnh đèo Hải Vân — đường cong xuống biển</span><span class="en">Hai Van Pass panorama — road curving down to sea</span><br>
+            <span class="shot-tag exp">EXP</span> <span class="vi">Đứng trên đỉnh đèo, đèn lồng phố cổ ban đêm, vườn rau Trà Quế</span><span class="en">Standing at the pass top, Ancient Town lanterns at night, Tra Que garden</span><br>
+            <span class="shot-tag food">FOOD</span> <span class="vi">Tay làm bánh bao White Rose, tô Cao Lầu, bàn ăn bên sông đêm</span><span class="en">White Rose dumplings made, Cao Lau bowl, riverside table at night</span>
+          </td>
+          <td>3, 5</td>
+        </tr>
+        <tr>
+          <td class="dest"><span class="vi">Hội An (mở rộng)</span><span class="en">Hoi An extended</span></td>
+          <td>D10</td>
+          <td class="shots">
+            <span class="shot-tag hero">HERO</span> <span class="vi">Sông Thu Bồn lúc giờ vàng, phản chiếu lễ hội đèn lồng</span><span class="en">Thu Bon river at golden hour, lantern festival reflection</span><br>
+            <span class="shot-tag exp">EXP</span> <span class="vi">Tay làm lồng đèn, bình minh Mỹ Sơn, đạp xe đồng lúa</span><span class="en">Lantern-making workshop hands, My Son sunrise, cycling rice fields</span><br>
+            <span class="shot-tag food">FOOD</span> <span class="vi">Chợ sáng tươi, quầy bánh mì Phương, cà phê view sông</span><span class="en">Morning market produce, banh mi Phuong stall, cafe with river view</span>
+          </td>
+          <td>3, 5</td>
+        </tr>
+        <tr>
+          <td class="dest"><span class="vi">Quy Nhơn ⭐</span><span class="en">Quy Nhon ⭐</span></td>
+          <td>D11–12</td>
+          <td class="shots">
+            <span class="shot-tag hero">HERO</span> <span class="vi">Bãi biển Kỳ Co vắng vẻ, hẻm núi Hầm Hô từ mặt nước</span><span class="en">Ky Co beach empty coastline, Ham Ho canyon from the water</span><br>
+            <span class="shot-tag exp">EXP</span> <span class="vi">Khám phá tháp Chàm, bình minh thuyền cá, thuyền Hầm Hô</span><span class="en">Cham tower exploration, fishing boat sunrise, Ham Ho boat ride</span><br>
+            <span class="shot-tag food">FOOD</span> <span class="vi">Bánh xèo Bình Định, hải sản tươi sống, chợ địa phương</span><span class="en">Banh xeo Binh Dinh, fresh seafood spread, local market vendors</span><br>
+            <strong style="font-size:11px;color:#888;">⭐ <span class="vi">Đánh giá: Có thể đứng độc lập không? Chất lượng khách sạn? Tiếp cận được với khách UHNW?</span><span class="en">Evaluate: Is this a standalone product? Hotel quality? Accessible for UHNW clients?</span></strong>
+          </td>
+          <td>6 <span class="vi">(mới)</span><span class="en">(new)</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 19f: Supplier Meeting -->
+  <div class="subsec-head">
+    <div class="subsec-num">f</div>
+    <div class="subsec-title"><span class="vi">Chuyến Kiểm Tra — Lịch Gặp Nhà Cung Cấp</span><span class="en">Inspection Trip — Supplier Meeting Agenda</span></div>
+  </div>
+  <div class="callout">
+    <span class="vi">Tại mỗi khách sạn 4–5★, yêu cầu: (1) Xem phòng ít nhất 2 hạng. (2) Dùng thử F&amp;B hoặc bữa trưa chào đón. (3) Bảng giá NET + giá đoàn. (4) Form đại lý ưu tiên nếu có. (5) Gói ảnh hi-res cho website (có xin phép). Mục tiêu: <strong>rời mỗi khách sạn với lịch giá đã ký hoặc đã thỏa thuận bằng lời.</strong></span>
+    <span class="en">At every 4–5★ hotel visit, request: (1) Room show of at least 2 categories. (2) F&amp;B tasting or welcome lunch. (3) NET rate sheet + group rates. (4) Preferred agent application form if applicable. (5) Hi-res image pack for your website (with permission). Target: <strong>leave each hotel with a signed or verbally agreed rate schedule.</strong></span>
+  </div>
+  <div class="supplier-grid">
+    <div class="sup-card">
+      <div class="sup-dest">🏨 <span class="vi">Hà Nội — Ngày 1–3</span><span class="en">Hanoi — Day 1–3</span></div>
+      <div class="sup-item"><div class="chk"></div><span class="vi">La Siesta Ma May — xem phòng + giá NET</span><span class="en">La Siesta Ma May — room show + NET rates</span></div>
+      <div class="sup-item"><div class="chk"></div><span class="vi">Sofitel Metropole — gặp Sales Manager</span><span class="en">Sofitel Metropole — meet Sales Manager</span></div>
+      <div class="sup-item"><div class="chk"></div><span class="vi">Xác nhận La Siesta là đối tác ưu tiên của AA</span><span class="en">Confirm La Siesta as AA preferred partner</span></div>
+      <div class="sup-item"><div class="chk"></div><span class="vi">Hướng dẫn Bát Tràng — kiểm tra chất lượng &amp; brief</span><span class="en">Bat Trang guide — test quality &amp; brief</span></div>
+      <div class="sup-item"><div class="chk"></div><span class="vi">Lấy gói ảnh hi-res từ La Siesta</span><span class="en">Get image pack from La Siesta</span></div>
+    </div>
+    <div class="sup-card">
+      <div class="sup-dest">🏨 <span class="vi">Ninh Bình — Ngày 4–5</span><span class="en">Ninh Binh — Day 4–5</span></div>
+      <div class="sup-item"><div class="chk"></div><span class="vi">Ninh Binh Hidden Charm — kiểm tra toàn diện</span><span class="en">Ninh Binh Hidden Charm — full inspection</span></div>
+      <div class="sup-item"><div class="chk"></div><span class="vi">Xem phòng, F&amp;B, tiện ích spa</span><span class="en">Room show, F&amp;B, spa facilities</span></div>
+      <div class="sup-item"><div class="chk"></div><span class="vi">Đàm phán giá NET ưu tiên của AA</span><span class="en">Negotiate AA preferred NET rate</span></div>
+      <div class="sup-item"><div class="chk"></div><span class="vi">Công ty thuyền Tràng An — kiểm tra sản phẩm</span><span class="en">Trang An boat operator — product check</span></div>
+      <div class="sup-item"><div class="chk"></div>⚡ <span class="vi">Khách sạn Ninh Bình FLAGSHIP của AA — ưu tiên cao nhất</span><span class="en">AA's FLAGSHIP Ninh Binh hotel — top priority</span></div>
+    </div>
+    <div class="sup-card">
+      <div class="sup-dest">🏨 <span class="vi">Phong Nha — Ngày 6–7</span><span class="en">Phong Nha — Day 6–7</span></div>
+      <div class="sup-item"><div class="chk"></div><span class="vi">Phong Nha Adventure Resort — xem phòng</span><span class="en">Phong Nha Adventure Resort — room show</span></div>
+      <div class="sup-item"><div class="chk"></div><span class="vi">Gặp công ty tour Hang Thiên Đường</span><span class="en">Meet Paradise Cave tour operator</span></div>
+      <div class="sup-item"><div class="chk"></div><span class="vi">Đánh giá Phong Nha Farmstay như lựa chọn thay thế</span><span class="en">Evaluate Phong Nha Farmstay as alternative option</span></div>
+      <div class="sup-item"><div class="chk"></div><span class="vi">Kiểm tra nhà cung cấp kayak sông Son</span><span class="en">Check Son River kayak supplier</span></div>
+      <div class="sup-item"><div class="chk"></div><span class="vi">Xác nhận lộ trình DMZ + chất lượng hướng dẫn</span><span class="en">Confirm DMZ route + guide quality</span></div>
+    </div>
+    <div class="sup-card">
+      <div class="sup-dest">🏨 <span class="vi">Huế — Ngày 8</span><span class="en">Hue — Day 8</span></div>
+      <div class="sup-item"><div class="chk"></div><span class="vi">Medallion Huế — xem phòng đầy đủ + giá</span><span class="en">Medallion Hue — full room show + rates</span></div>
+      <div class="sup-item"><div class="chk"></div><span class="vi">Saigon Morin — so sánh như lựa chọn thay thế</span><span class="en">Saigon Morin — compare as alternative</span></div>
+      <div class="sup-item"><div class="chk"></div><span class="vi">Xác nhận công ty thuyền rồng sông Hương</span><span class="en">Confirm dragon boat operator on Perfume River</span></div>
+      <div class="sup-item"><div class="chk"></div><span class="vi">Thử nhà hàng ẩm thực Huế hoàng gia (cho bữa tối khách)</span><span class="en">Test royal cuisine restaurant (for client dinners)</span></div>
+      <div class="sup-item"><div class="chk"></div><span class="vi">Đặt Medallion là đối tác ưu tiên của AA tại Huế</span><span class="en">Book Medallion as AA preferred partner in Hue</span></div>
+    </div>
+    <div class="sup-card">
+      <div class="sup-dest">🏨 <span class="vi">Hội An — Ngày 9–10</span><span class="en">Hoi An — Day 9–10</span></div>
+      <div class="sup-item"><div class="chk"></div><span class="vi">Allegro Hội An — xem phòng + gói ảnh</span><span class="en">Allegro Hoi An — room show + image pack</span></div>
+      <div class="sup-item"><div class="chk"></div><span class="vi">Hoian Luxury Riverside — so sánh sản phẩm</span><span class="en">Hoian Luxury Riverside — compare product</span></div>
+      <div class="sup-item"><div class="chk"></div><span class="vi">Trang trại hữu cơ Trà Quế — kiểm tra chất lượng trải nghiệm</span><span class="en">Tra Que organic farm — experience quality check</span></div>
+      <div class="sup-item"><div class="chk"></div><span class="vi">Nhà cung cấp workshop lồng đèn — thử &amp; brief</span><span class="en">Lantern workshop supplier — test &amp; brief</span></div>
+      <div class="sup-item"><div class="chk"></div><span class="vi">Thử phương án Mỹ Sơn (có đáng đưa vào không?)</span><span class="en">Test My Son option (is it worth including?)</span></div>
+    </div>
+    <div class="sup-card">
+      <div class="sup-dest">⭐ <span class="vi">Quy Nhơn — Ngày 11–12</span><span class="en">Quy Nhon — Day 11–12</span></div>
+      <div class="sup-item"><div class="chk"></div><span class="vi">Serena Quy Nhơn — kiểm tra toàn diện (ứng cử FLAGSHIP)</span><span class="en">Serena Quy Nhon — full inspection (flagship candidate)</span></div>
+      <div class="sup-item"><div class="chk"></div><span class="vi">Đánh giá: chất lượng phòng, F&amp;B, tiêu chuẩn dịch vụ</span><span class="en">Evaluate: room quality, F&amp;B, service level</span></div>
+      <div class="sup-item"><div class="chk"></div><span class="vi">Công ty thuyền Hầm Hô — thử sản phẩm trọn vẹn</span><span class="en">Ham Ho boat operator — test product end-to-end</span></div>
+      <div class="sup-item"><div class="chk"></div><span class="vi">Hướng dẫn Tháp Chàm — chất lượng &amp; kỹ năng kể chuyện</span><span class="en">Cham Tower guide — quality &amp; storytelling check</span></div>
+      <div class="sup-item"><div class="chk"></div><span class="vi">Đánh giá bãi biển Kỳ Co + logistics di chuyển</span><span class="en">Evaluate beach access at Ky Co + transport logistics</span></div>
+    </div>
+  </div>
+
+  <!-- 19g: Quy Nhon Evaluation -->
+  <div class="subsec-head">
+    <div class="subsec-num">g</div>
+    <div class="subsec-title"><span class="vi">Quy Nhơn — Khung Đánh Giá Điểm Đến</span><span class="en">Quy Nhon — Destination Evaluation Framework</span></div>
+  </div>
+  <div class="callout coral">
+    <span class="vi">Quy Nhơn là điểm chưa biết quan trọng nhất trong chuyến đi. Câu hỏi là: <strong>nó có thể đứng độc lập như một Hành Trình Đặc Trưng ở mức $800+ PPD không?</strong> Trả lời 8 câu hỏi này trong 2 ngày. Nếu 6/8 là CÓ, thêm vào như Hành Trình #6 khi ra mắt website.</span>
+    <span class="en">Quy Nhon is the most important unknown on this trip. The question is: <strong>can it stand as a standalone Signature Journey product at $800+ PPD?</strong> Answer these 8 questions during your 2 days there. If 6/8 are YES, add it as Journey #6 at launch.</span>
+  </div>
+  <div class="eval-grid">
+    <div class="eval-card">
+      <div class="eval-title">🏨 <span class="vi">Chỗ Ở</span><span class="en">Accommodation</span></div>
+      <div class="eval-q"><div class="q-num">Q1</div><span class="vi">Serena Quy Nhơn có đạt chuẩn 4★+ để justify $800+ PPD không? (phòng, F&amp;B, dịch vụ)</span><span class="en">Is Serena Quy Nhon at a 4★+ standard that justifies $800+ PPD? (rooms, F&amp;B, service)</span></div>
+      <div class="eval-q"><div class="q-num">Q2</div><span class="vi">Có phương án xa xỉ thay thế nếu Serena không phải đối tác phù hợp không?</span><span class="en">Is there a backup luxury option if Serena isn't the right partner?</span></div>
+    </div>
+    <div class="eval-card">
+      <div class="eval-title">✈️ <span class="vi">Khả Năng Tiếp Cận</span><span class="en">Accessibility</span></div>
+      <div class="eval-q"><div class="q-num">Q3</div><span class="vi">Sân bay Phù Cát — chuyến bay từ HAN/SGN có đáng tin không? Tần suất, hãng, trễ?</span><span class="en">Phu Cat Airport — how reliable are flights from HAN/SGN? Frequency, airlines, delays?</span></div>
+      <div class="eval-q"><div class="q-num">Q4</div><span class="vi">Tàu ven biển Hội An → Quy Nhơn có phải sản phẩm đáng tin với khách UHNW không?</span><span class="en">Is the Hoi An → Quy Nhon coastal train a credible product for UHNW clients?</span></div>
+    </div>
+    <div class="eval-card">
+      <div class="eval-title">🗺️ <span class="vi">Chiều Sâu Sản Phẩm</span><span class="en">Product Depth</span></div>
+      <div class="eval-q"><div class="q-num">Q5</div><span class="vi">Có đủ nội dung cho 3 ngày đầy đủ không? (Hầm Hô, Tháp Chàm, biển Kỳ Co, đời sống địa phương)</span><span class="en">Is there enough to fill 3 full days? (Ham Ho, Cham Towers, Ky Co beach, local life)</span></div>
+      <div class="eval-q"><div class="q-num">Q6</div><span class="vi">Có hướng dẫn viên với chất lượng kể chuyện tốt không (không chỉ du lịch công nghiệp)?</span><span class="en">Are local guides available at a storytelling quality standard (not just factory tourism)?</span></div>
+    </div>
+    <div class="eval-card">
+      <div class="eval-title">🌟 <span class="vi">Phù Hợp Thương Hiệu</span><span class="en">Brand Fit</span></div>
+      <div class="eval-q"><div class="q-num">Q7</div><span class="vi">Quy Nhơn có thực sự "ngoài bản đồ du lịch" không, hay đã quá phát triển/đông đúc?</span><span class="en">Is Quy Nhon genuinely "off the tourist map" vs already too developed / crowded?</span></div>
+      <div class="eval-q"><div class="q-num">Q8</div><span class="vi">Bạn có sẵn sàng giới thiệu Quy Nhơn với khách UHNW như điểm nhấn chuyến Vietnam không?</span><span class="en">Would YOU recommend Quy Nhon to a UHNW client as a highlight of their Vietnam trip?</span></div>
+    </div>
+  </div>
+
+  <!-- Founders Commitment -->
+  <div class="commitment-box">
+    <h3><span class="vi">Cam Kết Người Sáng Lập · Trước Buổi Họp Tiếp Theo</span><span class="en">Founders' Commitment · Before Next Check-In</span></h3>
+    <div class="commits">
+      <div class="commit-item">
+        <div class="who"><span class="vi">Tài — Kinh Doanh &amp; Hệ Thống</span><span class="en">Tai — Sales &amp; Systems</span></div>
+        <span class="vi">Cài đặt tài khoản Mailchimp, tạo 2 danh sách (Đại Lý + Khách Hàng), và soạn thảo số đầu tiên của The Ant Insider (B2B) sẵn sàng gửi khi website ra mắt. Email tất cả đối tác khách sạn 4–5★ yêu cầu gói ảnh hi-res trước ngày 7/6.</span>
+        <span class="en">Set up Mailchimp account, create 2 audience lists (Trade + Client), and draft the first issue of The Ant Insider (B2B) ready to send at website launch. Also email all 4–5★ hotel partners requesting hi-res image packs by June 7.</span>
+      </div>
+      <div class="commit-item">
+        <div class="who"><span class="vi">Phúc — Nội Dung &amp; Sản Phẩm</span><span class="en">Phuc — Content &amp; Product</span></div>
+        <span class="vi">Viết Hành Trình Đặc Trưng đầu tiên: <em>"Việt Nam Trọn Vẹn"</em> — tour 14 ngày xuyên suốt 3 miền. Đây là Hành Trình #5 và là nội dung nền tảng của toàn bộ website. Bản thảo hoàn thiện trước ngày 20/6.</span>
+        <span class="en">Write the first Signature Journey: <em>"Vietnam in Full"</em> — the 14-day grand tour across all 3 regions. This is Journey #5 and the content anchor of the entire website. Draft complete by June 20.</span>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end s19 -->
+
+</div><!-- end content -->
+
+<footer>
+  <div class="ft-logo">🐜 The Ant Adventures</div>
+  <div class="ft-tagline">"Where Authentic Adventure Begins"</div>
+  <div class="ft-meta">theantadventures.com &nbsp;·&nbsp; 748 Truong Sa, District 3, HCMC &nbsp;·&nbsp; Version 5 &nbsp;·&nbsp; 21/05/2026 &nbsp;·&nbsp; <span class="vi">Bảo mật — Phuc Vo &amp; Tai Pham</span><span class="en">Confidential — Phuc Vo &amp; Tai Pham</span></div>
+</footer>
+
+</div><!-- end main -->
+
+
+
+<script>
+// Language toggle
+function setLang(lang) {
+  document.documentElement.className = 'lang-' + lang;
+  ['btn-vi','btn-en','tbtn-vi','tbtn-en'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.classList.toggle('active', id.includes(lang));
+  });
+  localStorage.setItem('ant-lang', lang);
+}
+
+// Sidebar toggle (mobile)
+function toggleSidebar() {
+  document.getElementById('sidebar').classList.toggle('open');
+  document.getElementById('overlay').classList.toggle('show');
+}
+function closeSidebar() {
+  document.getElementById('sidebar').classList.remove('open');
+  document.getElementById('overlay').classList.remove('show');
+}
+
+// Auto-close sidebar on nav link tap (mobile)
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', () => {
+    if (window.innerWidth <= 768) closeSidebar();
+  });
+});
+
+// Active link tracking
+const sections = document.querySelectorAll('.section');
+const navLinks = document.querySelectorAll('.nav-link');
+function updateActive() {
+  let cur = '';
+  sections.forEach(s => { if (window.scrollY >= s.offsetTop - 100) cur = s.id; });
+  navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + cur));
+}
+window.addEventListener('scroll', updateActive, { passive: true });
+updateActive();
+
+// Restore language preference
+const saved = localStorage.getItem('ant-lang');
+if (saved) setLang(saved);
+</script>
+</body>
+</html>
